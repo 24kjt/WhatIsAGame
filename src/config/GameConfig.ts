@@ -12,5 +12,10 @@ export const GameConfig: Phaser.Types.Core.GameConfig = {
             debug: false
         }
     },
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        parent: 'game-container', // Add a div with this ID in your HTML
+    },
     scene: [VersusGameScene]
 };

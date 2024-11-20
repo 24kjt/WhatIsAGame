@@ -131,12 +131,12 @@ export class VersusGameScene extends Phaser.Scene {
     }
 
     private checkScore() {
-        if (this.ball.x < 0) {
+        if (this.ball.x < 40) {
             // Right player scores
             this.scoreRight++;
             this.scoreTextRight.setText(this.scoreRight.toString());
             this.resetBall();
-        } else if (this.ball.x > 800) {
+        } else if (this.ball.x > 760) {
             // Left player scores
             this.scoreLeft++;
             this.scoreTextLeft.setText(this.scoreLeft.toString());
