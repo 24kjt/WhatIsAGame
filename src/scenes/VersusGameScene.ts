@@ -7,7 +7,7 @@
 export class VersusGameScene extends Phaser.Scene {
 
 	constructor() {
-		super({ key: 'VersusGameScene'});
+		super("VersusGameScene");
 
 		/* START-USER-CTR-CODE */
         this.leftPaddle;
@@ -21,10 +21,16 @@ export class VersusGameScene extends Phaser.Scene {
         /* END-USER-CTR-CODE */
 	}
 
+
+    preload() {
+        this.load.audio('ballBounce', 'assets/audio/PumpSound.wav'); // correct
+    }
+
+
 	editorCreate(): void {
 
 		// fufuSuperDino
-		this.add.image(400, 300, "FufuSuperDino");
+		this.add.image(50, 300, "FufuSuperDino");
 
 		this.events.emit("scene-awake");
 	}
@@ -34,12 +40,23 @@ export class VersusGameScene extends Phaser.Scene {
     // Write your code here
 
     create() {
+        //  Input events
+        this.input.on('pointermove', function (pointer)
+        {
+
+            //  Keep the paddle within the game
+            this.leftPaddle.y = Phaser.Math.Clamp(pointer.y, 60, 740);
+
+        }, this);
+
         // Create paddles
         this.leftPaddle = this.add.rectangle(50, 300, 20, 120, 0xFFFFFF);
         this.rightPaddle = this.add.rectangle(750, 300, 20, 120, 0xFFFFFF);
 
         // Create ball
         this.ball = this.add.circle(400, 300, 10, 0xFFFFFF);
+        this.snd_ballBounce = this.sound.add('ballBounce');
+
 
         // Enable physics
         this.physics.add.existing(this.leftPaddle);
@@ -60,8 +77,8 @@ export class VersusGameScene extends Phaser.Scene {
         ballBody.setBounce(1, 1);
 
         // Add collision between ball and paddles
-        this.physics.add.collider(this.ball, this.leftPaddle, null, undefined, this);
-        this.physics.add.collider(this.ball, this.rightPaddle, null, undefined, this);
+        this.physics.add.collider(this.ball, this.leftPaddle, this.handlePaddleHit, undefined, this);
+        this.physics.add.collider(this.ball, this.rightPaddle, this.handlePaddleHit, undefined, this);
 
 
 
@@ -105,7 +122,8 @@ export class VersusGameScene extends Phaser.Scene {
         this.checkScore();
     }
 
-    private handlePaddleHit(ball: Phaser.GameObjects.GameObject) {
+    private handlePaddleHit(ball: Phaser.GameObjects.GameObject, paddle: Phaser.Physics.Arcade.Sprite): void {
+        /*
         const ballBody = ball.body as Phaser.Physics.Arcade.Body;
 
         // Increase ball speed slightly on each hit
@@ -119,7 +137,12 @@ export class VersusGameScene extends Phaser.Scene {
         ballBody.setVelocity(
             (ballBody.velocity.x > 0 ? -1 : 1) * velocity,
             deltaY
-        );
+        );*/
+
+        this.snd_ballBounce.play({
+            volume: 0.5,
+            loop: false
+        });
     }
 
     private constrainPaddle(paddle: Phaser.GameObjects.Rectangle) {
