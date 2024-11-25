@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/button.png",
+                "type": "image",
+                "key": "button"
+            },
+            {
                 "url": "assets/FufuSuperDino.png",
                 "type": "image",
                 "key": "FufuSuperDino"
