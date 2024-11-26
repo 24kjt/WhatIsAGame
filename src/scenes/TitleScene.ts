@@ -7,6 +7,7 @@
 /* END-USER-IMPORTS */
 
 export class TitleScene extends Phaser.Scene {
+    private button!: Phaser.GameObjects.Sprite; // or Image, depending on what you're using
 
 	constructor() {
 		super("TitleScene");
@@ -22,14 +23,16 @@ export class TitleScene extends Phaser.Scene {
 		this.add.image(560, 316, "FufuSuperDino");
 
 		// button
-		this.add.image(296, 523, "button");
+		this.button = this.add.image(814, 523, "button");
 
 		this.events.emit("scene-awake");
 	}
 
+
+
 	/* START-USER-CODE */
     preload() {
-        this.load.image('button', 'assets/button.png'); // correct
+         this.load.image('button', 'assets/button.png'); // correct
         this.load.image('FufuSuperDino', 'assets/FufuSuperDino.png'); // correct
     }
 	// Write your code here
@@ -37,7 +40,7 @@ export class TitleScene extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		setupButtonInteractions();
+		this.setupButtonInteractions();
 	}
 
 	update() {
@@ -46,7 +49,7 @@ export class TitleScene extends Phaser.Scene {
         }
 	}
 
-    private setupButtonInteractions() {
+    private setupButtonInteractions(): void {
         this.button.setInteractive()
             .on('pointerover', () => this.button.setTint(0xe0e0e0))
             .on('pointerout', () => this.button.clearTint())
