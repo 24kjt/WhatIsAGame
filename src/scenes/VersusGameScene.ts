@@ -114,6 +114,10 @@ export class VersusGameScene extends Phaser.Scene {
             this.rightPaddle.y += 7;
         }
 
+        if(this.input.keyboard.addKey('N').isDown) {
+            this.scene.start('TitleScene');
+        }
+
         // Keep paddles within the game bounds
         this.constrainPaddle(this.leftPaddle);
         this.constrainPaddle(this.rightPaddle);

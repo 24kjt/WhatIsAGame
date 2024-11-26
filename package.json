@@ -18,13 +18,21 @@
         "build": "vite build --config vite/config.prod.mjs && phaser-asset-pack-hashing -j -r dist"
     },
     "devDependencies": {
+        "@aws-amplify/backend": "^1.8.0",
+        "@aws-amplify/backend-cli": "^1.4.2",
+        "aws-cdk": "^2.171.0",
+        "aws-cdk-lib": "^2.171.0",
+        "constructs": "^10.4.2",
+        "esbuild": "^0.24.0",
         "phaser-asset-pack-hashing": "^1.0.6",
         "terser": "^5.28.1",
-        "typescript": "^5.3.3",
+        "tsx": "^4.19.2",
+        "typescript": "^5.7.2",
         "vite": "^5.1.4"
     },
     "dependencies": {
         "@phaserjs/editor-scripts-base": "^1.0.0",
+        "aws-amplify": "^6.10.0",
         "phaser": "3.80.1"
     }
 }
