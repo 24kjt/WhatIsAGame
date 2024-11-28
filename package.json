@@ -20,8 +20,8 @@
     "devDependencies": {
         "@aws-amplify/backend": "^1.8.0",
         "@aws-amplify/backend-cli": "^1.4.2",
-        "aws-cdk": "^2.171.0",
-        "aws-cdk-lib": "^2.171.0",
+        "aws-cdk": "^2.171.1",
+        "aws-cdk-lib": "^2.171.1",
         "constructs": "^10.4.2",
         "esbuild": "^0.24.0",
         "phaser-asset-pack-hashing": "^1.0.6",
