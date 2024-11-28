@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-whatisagame-dev-339fa-authRole",
+      "UnauthRoleArn": "arn:aws:iam::484907501376:role/amplify-whatisagame-dev-339fa-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::484907501376:role/amplify-whatisagame-dev-339fa-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-whatisagame-dev-339fa-deployment",
+      "UnauthRoleName": "amplify-whatisagame-dev-339fa-unauthRole",
+      "StackName": "amplify-whatisagame-dev-339fa",
+      "StackId": "arn:aws:cloudformation:us-east-1:484907501376:stack/amplify-whatisagame-dev-339fa/90ac5a80-ad53-11ef-8ac9-0afffb6739cf",
+      "AmplifyAppId": "d19w3zpedatv7w"
+    },
+    "categories": {
+      "storage": {
+        "votingDatabase": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "resourceName": "votingDatabase",
+  "tableName": "votingDatabase",
+  "partitionKey": {
+    "fieldName": "event",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

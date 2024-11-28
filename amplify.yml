@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - npm install
-        - amplify pull --appId d3kwo5epm7p0px --envName dev --yes
+        - amplify pull --appId d19w3zpedatv7w --envName dev --yes
     build:
       commands:
         - npm run build

@@ -1,0 +1,8 @@
+{
+  "storage": {
+    "votingDatabase": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}
