@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - npm install
         - amplify pull --appId d3kwo5epm7p0px --envName dev --yes
     build:
       commands:
