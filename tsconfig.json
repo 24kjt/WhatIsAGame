@@ -21,6 +21,9 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "typeRoots": ["./node_modules/@types", "./src"]
+
     },
     "include": [
         "src",
