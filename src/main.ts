@@ -4,7 +4,6 @@ import Preload from "./scenes/Preload";
 import { GameConfig } from './config/GameConfig';
 import awsconfig from './aws-exports';
 import { Amplify } from 'aws-amplify';
-
 Amplify.configure(awsconfig)
 
 class Boot extends Phaser.Scene {
