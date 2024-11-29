@@ -3,7 +3,7 @@ backend:
   phases:
     build:
       commands:
-        - amplify pull --appId d3pq2xgxk4bx7e --envName dev --yes
+        - amplify pull --appId d3pq2xgxk4bx7e --envName prod --yes
     postBuild:
       commands:
         - npm install
@@ -20,7 +20,7 @@ frontend:
     preBuild:
       commands:
         - npm install
-        - amplify pull --appId d3pq2xgxk4bx7e --envName dev --yes
+        - amplify pull --appId d3pq2xgxk4bx7e --envName prod --yes
     build:
       commands:
         - npm run build
