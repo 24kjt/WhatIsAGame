@@ -1,4 +1,24 @@
 {
+  "api": {
+    "whatisagame": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2025-03-03T03:35:10.858Z",
+              "apiKeyExpirationDays": 90,
+              "description": "voting"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "hosting": {
     "amplifyhosting": {
       "lastPushTimeStamp": "2024-12-03T03:10:42.541Z",

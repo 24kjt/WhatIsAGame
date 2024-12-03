@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "whatisagame",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 90,
+      "apiKeyExpirationDate": "2025-03-03T03:35:10.858Z",
+      "keyDescription": "voting"
+    }
+  }
+}
