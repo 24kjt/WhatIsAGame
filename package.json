@@ -24,7 +24,9 @@
         "vite": "^5.1.4"
     },
     "dependencies": {
+        "@aws-amplify/ui-react": "^6.7.1",
         "@phaserjs/editor-scripts-base": "^1.0.0",
+        "aws-amplify": "^6.10.2",
         "phaser": "3.80.1"
     }
 }

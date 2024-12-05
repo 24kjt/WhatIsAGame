@@ -95,6 +95,10 @@ export class VersusGameScene extends Phaser.Scene {
 
         // Start the game
         this.resetBall();
+
+        // In your VersusGameScene or any other scene
+        this.scene.launch('VotingScene'); // true means start immediately
+
     }
 
     update() {

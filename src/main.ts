@@ -2,6 +2,12 @@ import Phaser from "phaser";
 import Level from "./scenes/Level";
 import Preload from "./scenes/Preload";
 import {VersusGameScene} from "./scenes/VersusGameScene";	
+import { VotingScene } from './scenes/VotingScene';
+
+import { Amplify } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 
 
 class Boot extends Phaser.Scene {
@@ -40,7 +46,7 @@ window.addEventListener('load', function () {
 			autoCenter: Phaser.Scale.Center.CENTER_BOTH,
 			parent: "game-container",
 		},
-		scene: [Boot, Preload, Level, VersusGameScene]
+		scene: [Boot, Preload, Level, VersusGameScene, VotingScene]
 	});
 
 	game.scene.start("Boot");
