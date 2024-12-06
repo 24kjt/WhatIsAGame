@@ -243,7 +243,7 @@ export type GetVotingMatterQuery = {
   getVotingMatter?:  {
     __typename: "VotingMatter",
     id: string,
-    votingMatterName: string,
+    //votingMatterName: string,
     yesCount: number,
     noCount: number,
     createdAt?: string | null,

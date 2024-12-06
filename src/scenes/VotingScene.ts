@@ -3,15 +3,30 @@ import { generateClient } from 'aws-amplify/api';
 import { type CreateVoteInput } from './API'; //
 
 // GraphQL mutations
-const createVote = /* GraphQL */ `
-  mutation CreateVote($input: CreateVoteInput!) {
-    createVote(input: $input) {
+const GetVotingMatterQuery = /* GraphQL */ `
+  query GetVotingMatter($id: ID!) {
+    getVotingMatter(id: $id) {
       id
-      choice
-      timestamp
+      yesCount
+      noCount
+      # Add other fields you need
     }
   }
 `;
+const client = generateClient<Schema>({
+  authMode: 'apiKey',
+});
+
+
+interface VotingMatter {
+  id: string;
+  yesCount: number;
+  noCount: number;
+  // Add other properties as needed
+}
+
+
+
 
 export class VotingScene extends Phaser.Scene {
     constructor() {
@@ -21,7 +36,7 @@ export class VotingScene extends Phaser.Scene {
 
     create() {
 		// Check if user has already voted
-		this.hasVoted = localStorage.getItem('hasVoted') === 'true';
+		//this.hasVoted = localStorage.getItem('hasVoted') === 'true';
         
 		// Create voting buttons
         const yesButton = this.add.text(100, 100, 'Vote Yes', { 
@@ -47,19 +62,20 @@ export class VotingScene extends Phaser.Scene {
 
 	async submitVote(choice) {
         if (this.hasVoted) {
+          console.log('aaaaaaa');
             this.add.text(200, 200, 'You have already voted!', {
                 fontSize: '18px',
                 fill: '#ff0000'
             }).setOrigin(0.5);
             return;
         }
-
+        console.log('aaaaaaa');
         try {
             // ... previous voting logic ...
             
             // Set the vote flag after successful submission
             this.hasVoted = true;
-            
+            console.log('aaaaaaa');
             // Store in local storage to persist across sessions
             localStorage.setItem('hasVoted', 'true');
 
@@ -73,27 +89,25 @@ export class VotingScene extends Phaser.Scene {
 
   
   async displayResults() {
-	const getVotes = /* GraphQL */ `
-	query ListVotes {
-	  listVotes {
-		items {
-		  choice
-		}
-	  }
-	}
-	`;
-
 	  try {
-		  const voteData = await API.graphql(graphqlOperation(getVotes));
-		  const votes = voteData.data.listVotes.items;
+		  const voteData = await client.graphql({
+        query: GetVotingMatterQuery,
+        variables: {
+          id: "questionTest"
+        }
+      });
+		  console.log('aaaaaaa');
+      
+
+		  const votes = voteData.data.getVotingMatter;
 		  
-		  const yesVotes = votes.filter(v => v.choice === 'YES').length;
-		  const noVotes = votes.filter(v => v.choice === 'NO').length;
+		  const yesVotes = votes.yesCount;
+		  const noVotes = votes.noCount;
 		  
 		  // Display results in your Phaser scene
 		  this.add.text(200, 300, `Results: Yes: ${yesVotes} No: ${noVotes}`, {
 			  fontSize: '18px',
-			  fill: '#fff'
+			  fill: '#ff0000'
 		  }).setOrigin(0.5);
 		  
 	  } catch (error) {
