@@ -235,6 +235,38 @@ export type DeleteVotingMatterMutation = {
   } | null,
 };
 
+export type VoteYesVotingMatterMutationVariables = {
+  id: string,
+};
+
+export type VoteYesVotingMatterMutation = {
+  voteYesVotingMatter?:  {
+    __typename: "VotingMatter",
+    id: string,
+    votingMatterName: string,
+    yesCount: number,
+    noCount: number,
+    createdAt?: string | null,
+    updatedAt?: string | null,
+  } | null,
+};
+
+export type VoteNoVotingMatterMutationVariables = {
+  id: string,
+};
+
+export type VoteNoVotingMatterMutation = {
+  voteNoVotingMatter?:  {
+    __typename: "VotingMatter",
+    id: string,
+    votingMatterName: string,
+    yesCount: number,
+    noCount: number,
+    createdAt?: string | null,
+    updatedAt?: string | null,
+  } | null,
+};
+
 export type GetVotingMatterQueryVariables = {
   id: string,
 };
@@ -243,7 +275,7 @@ export type GetVotingMatterQuery = {
   getVotingMatter?:  {
     __typename: "VotingMatter",
     id: string,
-    //votingMatterName: string,
+    votingMatterName: string,
     yesCount: number,
     noCount: number,
     createdAt?: string | null,

@@ -62,3 +62,33 @@ export const deleteVotingMatter = /* GraphQL */ `mutation DeleteVotingMatter(
   APITypes.DeleteVotingMatterMutationVariables,
   APITypes.DeleteVotingMatterMutation
 >;
+export const voteYesVotingMatter = /* GraphQL */ `mutation VoteYesVotingMatter($id: ID!) {
+  voteYesVotingMatter(id: $id) {
+    id
+    votingMatterName
+    yesCount
+    noCount
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.VoteYesVotingMatterMutationVariables,
+  APITypes.VoteYesVotingMatterMutation
+>;
+export const voteNoVotingMatter = /* GraphQL */ `mutation VoteNoVotingMatter($id: ID!) {
+  voteNoVotingMatter(id: $id) {
+    id
+    votingMatterName
+    yesCount
+    noCount
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.VoteNoVotingMatterMutationVariables,
+  APITypes.VoteNoVotingMatterMutation
+>;

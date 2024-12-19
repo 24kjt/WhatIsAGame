@@ -1,9 +1,33 @@
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/api';
-import { type CreateVoteInput } from './API'; //
+import * as mutations from '../graphql/mutations';
+import * as queries from '../graphql/queries';
+import { UpdateVotingMatterInput } from '../API'; 
+import { voteYesVotingMatter }  from '../graphql/mutations';
+const client = generateClient();
+
+const voteDetails = {
+  id: 'questionTest',
+  yesCount: 0,
+  noCount: 0,
+};
+
+
+//import config from 'amplifyconfiguration.json';
+//Amplify.configure(config);
+
+
+
+
+
+//import { type CreateVoteInput } from './API'; //
+//import { UpdateVotingMatterMutation, UpdateVotingMatterInput } from 'src/API.ts';
+
 
 // GraphQL mutations
-const GetVotingMatterQuery = /* GraphQL */ `
+
+/*
+const GetVotingMatterQuery = `
   query GetVotingMatter($id: ID!) {
     getVotingMatter(id: $id) {
       id
@@ -13,9 +37,22 @@ const GetVotingMatterQuery = /* GraphQL */ `
     }
   }
 `;
+
+const GetVotingInputMutation = `
+mutation GetVotingMatter($id: ID!, $yesCount: YesCount!, $noCount: NoCount!) {
+    getVotingInputMutation(id: $id, yesCount: $yesCount, noCount: $noCount) {
+      id
+      yesCount
+      noCount
+      # Add other fields you need
+    }
+  }
+  `;
+
 const client = generateClient<Schema>({
   authMode: 'apiKey',
-});
+}); 
+*/
 
 
 interface VotingMatter {
@@ -56,9 +93,32 @@ export class VotingScene extends Phaser.Scene {
         noButton.setInteractive();
 
         // Add click handlers
-        yesButton.on('pointerdown', () => this.submitVote('YES'));
+        yesButton.on('pointerdown', () => this.voteYes());
         noButton.on('pointerdown', () => this.submitVote('NO'));
     }
+
+  async voteYes()
+  {
+    console.log('voted yes');
+    try{
+      const voteID = {
+        id: "questionTest"
+      };
+
+      const response = await client.graphql({
+        query: voteYesVotingMatter,
+        variables: {
+          id: "questionTest"
+        }
+      });
+      return response.data.voteYesVotingMatter;
+    } catch (error) {
+      console.error('Full Error updating vote:', JSON.stringify(error, null, 2));
+      throw error;
+    }
+  }
+
+
 
 	async submitVote(choice) {
         if (this.hasVoted) {
@@ -78,8 +138,8 @@ export class VotingScene extends Phaser.Scene {
             console.log('aaaaaaa');
             // Store in local storage to persist across sessions
             localStorage.setItem('hasVoted', 'true');
-
-            this.displayResults();
+            this.updateVote();
+            //this.displayResults();
         } catch (error) {
             console.error('Error submitting vote:', error);
         }
@@ -91,7 +151,7 @@ export class VotingScene extends Phaser.Scene {
   async displayResults() {
 	  try {
 		  const voteData = await client.graphql({
-        query: GetVotingMatterQuery,
+        query: queries.getVotingMatter,
         variables: {
           id: "questionTest"
         }
@@ -113,6 +173,42 @@ export class VotingScene extends Phaser.Scene {
 	  } catch (error) {
 		  console.error('Error fetching votes:', error);
 	  }
+  }
+
+  async updateVote() {
+    try {
+      const updateDetails: UpdateVotingMatterInput = {
+        id: "questionTest",
+        votingMatterName: "DDD",
+        yesCount: 1,
+        noCount: 1
+      };
+
+		  console.log('bbbbbb');
+
+		  const voteData = await client.graphql({
+        query: mutations.updateVotingMatter,
+        variables: {
+          input: updateDetails
+        }
+      });
+
+		  console.log('cccccc');
+
+/*
+      const response = await ApiError.graphql({
+        query: mutations.updateVotingMatter,
+        variables: {
+          input: voteData
+        }
+      });
+      console.log('Vote updated successfully:', response);
+*/
+
+    } catch (error) {
+      console.error('Full Error updating vote:', JSON.stringify(error, null, 2));
+      throw error;
+    }
   }
   
 }
