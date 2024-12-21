@@ -3,6 +3,7 @@ import Level from "./scenes/Level";
 import Preload from "./scenes/Preload";
 import {VersusGameScene} from "./scenes/VersusGameScene";	
 import { VotingScene } from './scenes/VotingScene';
+import {NarrationManager} from "./dialogueSystem/NarrationManager";	
 
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
@@ -46,7 +47,7 @@ window.addEventListener('load', function () {
 			autoCenter: Phaser.Scale.Center.CENTER_BOTH,
 			parent: "game-container",
 		},
-		scene: [Boot, Preload, Level, VersusGameScene, VotingScene]
+		scene: [Boot, Preload, Level, VersusGameScene, VotingScene, NarrationManager]
 	});
 
 	game.scene.start("Boot");

@@ -4,6 +4,8 @@ import * as mutations from '../graphql/mutations';
 import * as queries from '../graphql/queries';
 import { UpdateVotingMatterInput } from '../API'; 
 import { voteYesVotingMatter }  from '../graphql/mutations';
+import { voteNoVotingMatter }  from '../graphql/mutations';
+
 const client = generateClient();
 
 const voteDetails = {
@@ -94,7 +96,7 @@ export class VotingScene extends Phaser.Scene {
 
         // Add click handlers
         yesButton.on('pointerdown', () => this.voteYes());
-        noButton.on('pointerdown', () => this.submitVote('NO'));
+        noButton.on('pointerdown', () => this.voteNo());
     }
 
   async voteYes()
@@ -118,6 +120,27 @@ export class VotingScene extends Phaser.Scene {
     }
   }
 
+
+  async voteNo()
+  {
+    console.log('voted no');
+    try{
+      const voteID = {
+        id: "questionTest"
+      };
+
+      const response = await client.graphql({
+        query: voteNoVotingMatter,
+        variables: {
+          id: "questionTest"
+        }
+      });
+      return response.data.voteNoVotingMatter;
+    } catch (error) {
+      console.error('Full Error updating vote:', JSON.stringify(error, null, 2));
+      throw error;
+    }
+  }
 
 
 	async submitVote(choice) {

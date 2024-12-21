@@ -4,6 +4,7 @@
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
+
 export class VersusGameScene extends Phaser.Scene {
 
 	constructor() {
@@ -64,6 +65,7 @@ export class VersusGameScene extends Phaser.Scene {
         this.physics.add.existing(this.ball);
 
 
+
         const leftPaddleBody = this.leftPaddle.body as Phaser.Physics.Arcade.Body;
         const rightPaddleBody = this.rightPaddle.body as Phaser.Physics.Arcade.Body;
 
@@ -98,6 +100,7 @@ export class VersusGameScene extends Phaser.Scene {
 
         // In your VersusGameScene or any other scene
         this.scene.launch('VotingScene'); // true means start immediately
+        this.scene.launch('NarrationManager'); // true means start immediately
 
     }
 
@@ -121,6 +124,8 @@ export class VersusGameScene extends Phaser.Scene {
         if(this.input.keyboard.addKey('N').isDown) {
             this.scene.start('TitleScene');
         }
+
+
 
         // Keep paddles within the game bounds
         this.constrainPaddle(this.leftPaddle);
