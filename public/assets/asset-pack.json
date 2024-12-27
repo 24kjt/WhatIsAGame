@@ -12,7 +12,36 @@
                 ],
                 "type": "audio",
                 "key": "PumpSound"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/TestDialogue/test_01.wav"
+                ],
+                "type": "audio",
+                "key": "test_01"
+            },  
+            {
+                "url": [
+                    "assets/audio/Narration/TestDialogue/test_02.wav"
+                ],
+                "type": "audio",
+                "key": "test_02"
+            },
+            {
+                "url": [
+                    "assets/Cutscene/test1.png"
+                ],
+                "type": "image",
+                "key": "Cutscene_test1"
+            },
+            {
+                "url": [
+                    "assets/Cutscene/test2.png"
+                ],
+                "type": "image",
+                "key": "Cutscene_test2"
             }
+
         ]
     },
     "meta": {

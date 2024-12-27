@@ -4,9 +4,12 @@ import Preload from "./scenes/Preload";
 import {VersusGameScene} from "./scenes/VersusGameScene";	
 import { VotingScene } from './scenes/VotingScene';
 import {NarrationManager} from "./dialogueSystem/NarrationManager";	
-
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
+import { StoryScene } from "./scenes/StoryScene";
+import { ShootingScene } from "./scenes/ShootingScene";
+import { ResultsScene } from "./scenes/ResultsScene";
+import { TitleScene } from "./scenes/TitleScene";
 
 Amplify.configure(awsconfig);
 
@@ -47,7 +50,7 @@ window.addEventListener('load', function () {
 			autoCenter: Phaser.Scale.Center.CENTER_BOTH,
 			parent: "game-container",
 		},
-		scene: [Boot, Preload, Level, VersusGameScene, VotingScene, NarrationManager]
+		scene: [Boot, Preload, Level, VersusGameScene, VotingScene, NarrationManager, StoryScene, ShootingScene, ResultsScene, TitleScene]
 	});
 
 	game.scene.start("Boot");

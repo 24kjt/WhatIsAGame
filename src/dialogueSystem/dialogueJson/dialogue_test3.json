@@ -1,0 +1,16 @@
+{
+    "start": {
+        "audioFile": "test_01",
+        "text": "You said no",
+        "duration": 3000,
+        "nextLine": "intro_2",
+        "nextLineDelay" : 4000
+    },
+    "intro_2": {
+        "audioFile": "test_02",
+        "text": "fascinating",
+        "duration": 3000,
+        "nextLine": "",
+        "nextLineDelay" : 1000
+    }
+}

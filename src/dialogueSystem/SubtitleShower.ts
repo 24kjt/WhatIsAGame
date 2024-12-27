@@ -21,7 +21,7 @@ export class SubtitleShower{
 
 
         const style = {
-            font: "32px Arial",
+            font: "24px Arial",
             fill: "#ffffff",
             wordWrap: {
                 width: this.sceneWidth*0.8, // Set the maximum width for wrapping
@@ -31,7 +31,7 @@ export class SubtitleShower{
 
         };
 
-        this.text = scene.add.text(this.sceneWidth/2, this.sceneHeight/2, "", style);
+        this.text = scene.add.text(this.sceneWidth/2, this.sceneHeight*0.9, "", style);
         this.text.setOrigin(0.5, 0);
     }
 
@@ -40,13 +40,14 @@ export class SubtitleShower{
         this.graphics.clear();
 
         this.text.text = newText;
-        this.rect = new Phaser.Geom.Rectangle(this.sceneWidth/2-this.text.width/2, this.sceneHeight/2, this.text.width, this.text.height);
+        this.rect = new Phaser.Geom.Rectangle(this.sceneWidth/2-this.text.width/2, this.sceneHeight*0.9, this.text.width, this.text.height);
         this.graphics.fillStyle( 0x0000aa, 1.0);
         this.graphics.fillRectShape(this.rect);
 
 
+
         this.timer = this.scene.time.addEvent({
-            delay: displayDuration*1000, // milliseconds
+            delay: displayDuration, // milliseconds
             callback: () => this.hideText() ,
             callbackScope: this,
             loop: false

@@ -1,0 +1,17 @@
+{
+    "test1": {
+        "file" : "dialogue_test1",
+        "yes" : "test2",
+        "no" : "test3"
+    },
+    "test2": {
+        "file" : "dialogue_test2",
+        "yes" : "",
+        "no" : ""
+    },
+    "test3": {
+        "file" : "dialogue_test3",
+        "yes" : "",
+        "no" : ""
+    }
+}

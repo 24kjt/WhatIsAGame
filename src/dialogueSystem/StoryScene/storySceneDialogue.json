@@ -1,0 +1,53 @@
+{
+    "playerAlwaysWins": {
+        "0": {
+            "dialogue": "Test dialogue player always winds",
+            "imageKey": "Cutscene_test1",
+            "progressTime": 3
+        },
+        "1": {
+            "dialogue": "Next dialogue",
+            "imageKey": "Cutscene_test1",
+            "progressTime": 3
+
+        },
+        "2": {
+            "dialogue": "Choice Making",
+            "imageKey": "Cutscene_test1",
+            "choice": {
+                "0": {
+                    "dialogue": "Choice 1",
+                    "nextDialogue": "playerAlwaysWins0"
+                },
+                "1": {
+                    "dialogue": "Choice 2",
+                    "nextDialogue": "playerAlwaysWins1"
+                }
+            }
+        }
+
+    },
+
+    
+    "playerAlwaysWins0": {
+        "0": {
+            "dialogue": "Player chose option 1",
+            "imageKey": "Cutscene_test2"
+        },
+        "1": {
+            "dialogue": "Next dialogue",
+            "imageKey": "Cutscene_test2"
+        }
+    },
+
+    "playerAlwaysWins1": {
+        "0": {
+            "dialogue": "Player chose option 2",
+            "imageKey": "Cutscene_test2"
+        },
+        "1": {
+            "dialogue": "Next dialogue",
+            "imageKey": "Cutscene_test2"
+        }
+    }
+}
