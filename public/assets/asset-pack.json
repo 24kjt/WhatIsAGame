@@ -40,6 +40,34 @@
                 ],
                 "type": "image",
                 "key": "Cutscene_test2"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/paperBG.jpg"
+                ],
+                "type": "image",
+                "key": "paperBG"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/title.png"
+                ],
+                "type": "image",
+                "key": "title"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/playButton.png"
+                ],
+                "type": "image",
+                "key": "title_button"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/buttonQuestionMark.png"
+                ],
+                "type": "image",
+                "key": "title_buttonQuestion"
             }
 
         ]

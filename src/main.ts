@@ -35,8 +35,8 @@ window.addEventListener('load', function () {
 	
 	const game = new Phaser.Game({
 		type: Phaser.AUTO,
-    width: 800, //prob change to 1280x720
-    height: 600,
+    width: 1280, //prob change to 1280x720
+    height: 720,
 		physics: {
 			default: 'arcade',
 			arcade: {
