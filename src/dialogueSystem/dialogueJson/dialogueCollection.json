@@ -13,5 +13,10 @@
         "file" : "dialogue_test3",
         "yes" : "",
         "no" : ""
+    },
+    "versus": {
+        "file" : "dialogue_versus",
+        "yes" : "versus",
+        "no" : "versus"
     }
 }

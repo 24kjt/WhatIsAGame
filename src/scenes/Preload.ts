@@ -80,7 +80,7 @@ export default class Preload extends Phaser.Scene {
 			}
 		}
 
-		this.scene.start("TitleScene");
+		this.scene.start("VersusGameScene");
 	}
 
 	/* END-USER-CODE */

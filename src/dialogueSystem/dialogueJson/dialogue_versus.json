@@ -1,0 +1,170 @@
+{
+    "start": {
+        "audioFile": "n_versus_01",
+        "text": "In today's world, games are complicated",
+        "duration": 2800,
+        "nextLine": "2",
+        "nextLineDelay" : 3000
+    },
+    "2": {
+        "audioFile": "n_versus_02",
+        "text": "From flashy visuals to sound effects",
+        "duration": 2800,
+        "sceneAction": "complicatedEntry",
+
+        "nextLine": "3",
+        "nextLineDelay" : 3000
+    },
+    "3": {
+        "audioFile": "n_versus_03",
+        "text": "Progression systems and business models",
+        "duration": 2800,
+        "nextLine": "4",
+        "nextLineDelay" : 3000
+    },
+    "4": {
+        "audioFile": "n_versus_04",
+        "text": "For now, let's unplug all that",
+        "sceneAction": "complicatedExit",
+
+        "duration": 3000,
+        "nextLine": "6",
+        "nextLineDelay" : 3000
+    },
+    
+    "6": {
+        "audioFile": "n_versus_06",
+        "text": "Take out the background art, some visuals",
+        "duration": 4000,
+        "sceneAction": "removeBG",
+
+        "nextLine": "7",
+        "nextLineDelay" : 4500
+    },
+    "7": {
+        "audioFile": "n_versus_07",
+        "text": "Take all that juice out and we have a familiar screen",
+        "duration": 3500,
+        "nextLine": "8",
+        "nextLineDelay" : 3800
+    },
+    "8": {
+        "audioFile": "n_versus_08",
+        "text": "Here, let's play for a bit",
+        "duration": 2400,
+        "nextLine": "9",
+        "nextLineDelay" : 2800
+    },
+    "9": {
+        "audioFile": "n_versus_09",
+        "text": "I'll be your opponent",
+        "duration": 1200,
+        "nextLine": "10",
+        "nextLineDelay" : 1500
+    },
+    "10": {
+        "audioFile": "n_versus_10",
+        "text": "Let me just... fit in there and",
+        "sceneAction": "possessOpponent",
+        "duration": 4000,
+        "nextLine": "11",
+        "nextLineDelay" : 4500
+    },
+    "11": {
+        "audioFile": "n_versus_11",
+        "text": "There we go",
+        "duration": 1500,
+        "nextLine": "12",
+        "nextLineDelay" : 3000
+    },
+    "12": {
+        "audioFile": "n_versus_12",
+        "text": "Play ball!",
+        "sceneAction": "startGame",
+        "duration": 1000,
+        "nextLine": "13",
+        "nextLineDelay" : 1500
+    },
+    "13": {
+        "audioFile": "n_versus_13",
+        "text": "This is clearly a game",
+        "duration": 2500,
+        "nextLine": "14",
+        "nextLineDelay" : 2800
+    },
+    "14": {
+        "audioFile": "n_versus_14",
+        "text": "Even without the fancy graphics and flashy effects",
+        "duration": 3000,
+        "nextLine": "15",
+        "nextLineDelay" : 3500
+    },
+    "15": {
+        "audioFile": "n_versus_15",
+        "text": "But, what makes it a game?",
+        "duration": 2500,
+        "nextLine": "16",
+        "nextLineDelay" : 2800
+    },
+    "16": {
+        "audioFile": "n_versus_16",
+        "text": "One of the first thing I hear when asking about the definition of a game",
+        "duration": 4500,
+        "nextLine": "16-1",
+        "nextLineDelay" : 4000
+    },
+    "16-1": {
+        "audioFile": "n_silence",
+        "text": "is that you can win and lose in a game, there's a goal and a challenge",
+        "duration": 3500,
+        "nextLine": "17",
+        "nextLineDelay" : 4500
+    },
+    "17": {
+        "audioFile": "n_versus_17",
+        "text": "Then, let's try taking that away, starting with the losing part",
+        "duration": 4500,
+        "nextLine": "17-1",
+        "nextLineDelay" : 4500
+    },
+    "17-1": {
+        "audioFile": "n_silence",
+        "text": "",
+        "sceneAction": "wallOffPlayer",
+        "duration": 6000,
+        "nextLine": "18",
+        "nextLineDelay" : 8000
+    },
+    "18": {
+        "audioFile": "n_versus_18",
+        "text": "There, I put a wall on your side so that you can never lose",
+        "duration": 3500,
+        "nextLine": "19",
+        "nextLineDelay" : 4000
+    },
+    "19": {
+        "audioFile": "n_versus_19",
+        "text": "While I may be able to fend myself off for a bit",
+        "duration": 2500,
+        "nextLine": "20",
+        "nextLineDelay" : 3000
+    },
+    "20": {
+        "audioFile": "n_versus_20",
+        "text": "I won't be able to forever",
+        "duration": 1500,
+        "nextLine": "21",
+        "nextLineDelay" : 2000
+    },
+    "21": {
+        "audioFile": "n_versus_21",
+        "text": "Now, is this a game?",
+        "duration": 2000,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 2500,
+        "voteKey": "versus_losingRemoval",
+        "yes":"versus",
+        "no":"versus"
+    }
+}

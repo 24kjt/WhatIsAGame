@@ -21,7 +21,7 @@ export class SubtitleShower{
 
 
         const style = {
-            font: "24px Arial",
+            font: "32px Arial",
             fill: "#ffffff",
             wordWrap: {
                 width: this.sceneWidth*0.8, // Set the maximum width for wrapping
@@ -41,7 +41,7 @@ export class SubtitleShower{
 
         this.text.text = newText;
         this.rect = new Phaser.Geom.Rectangle(this.sceneWidth/2-this.text.width/2, this.sceneHeight*0.9, this.text.width, this.text.height);
-        this.graphics.fillStyle( 0x0000aa, 1.0);
+        this.graphics.fillStyle( 0x000000, 1.0);
         this.graphics.fillRectShape(this.rect);
 
 

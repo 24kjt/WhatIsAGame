@@ -12,6 +12,8 @@
         "duration": 3000,
         "nextLine": "",
         "nextLineDelay" : 1000,
-        "event": "vote"
+        "event": "vote",
+        "voteKey": "question2",
+        "sceneAction": "wallOffOpponent"
     }
 }

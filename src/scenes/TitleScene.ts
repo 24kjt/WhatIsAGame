@@ -32,7 +32,7 @@ export class TitleScene extends Phaser.Scene {
 
         const style = {
             font: "24px Arial",
-            fill: "#ffffff",
+            fill: "#000000",
             wordWrap: {
                 width: this.sceneWidth*0.8, // Set the maximum width for wrapping
                 useAdvancedWrap: true // Optional, for more precise wrapping
@@ -65,9 +65,11 @@ export class TitleScene extends Phaser.Scene {
                 this.playButton.setTint(0x000000);
             });
 
+        this.playButton.visible = false;
+
         let { width, height } = this.sys.game.canvas;
 
-        this.startText = this.add.text(width/2, height/2, "Click to Start", style);
+        this.startText = this.add.text(width/2-300, height/2, "Click to Start", style);
         this.snakeSpeed = 0.5;
         this.snakeIsSpawnwed = false;
     }
@@ -82,6 +84,8 @@ export class TitleScene extends Phaser.Scene {
         if (this.input.keyboard.addKey('Q').isDown) {
             this.MoveSnakeBody(delta);
             console.log('snakehead x' + this.snakeHead.x );
+            console.log('snakehead y' + this.snakeHead.y );
+
         }
 
        // console.log('x mouse'+this.input.mousePointer.x);
@@ -114,7 +118,7 @@ export class TitleScene extends Phaser.Scene {
                 if(!this.resolveStateEntry)
                 {
                     this.timer = this.time.addEvent({
-                        delay: 3000, // milliseconds
+                        delay: 0, // milliseconds
                         callback: () => {
                             this.stage = IntroStage.ZoomOut;
                             this.resolveStateEntry = false;
@@ -300,25 +304,366 @@ export class TitleScene extends Phaser.Scene {
 
     PlaySequenceTween()
     {
-        var tank = this.add.image(-100,-100, 'title_buttonQuestion');
+        //ship
+        var ship = this.add.image(-100,-100, 'title_spaceShip');
+        var follower = { t: 0, vec: new Phaser.Math.Vector2() };
+        var tangentFollower = {}
+        var path = new Phaser.Curves.Path(-450, 0);
+        path.lineTo(-500, 50);
+        path.cubicBezierTo(1500, 800, 200, -300, 1000, 0);
+        ship.setTint(0x000000);
+
+
+        //tank
+        var tank = this.add.image(-49, 1000, 'title_tankBody');
+        var tankTop = this.add.image(-49, 1000, 'title_tankHead');
+
+        //cards
+        var cards = [];
+        cards.push(this.add.image(1000, 1000, 'title_cardJ').setScale(4,4));
+        cards.push(this.add.image(1300, 1000, 'title_cardQ').setScale(4,4));
+        cards.push(this.add.image(1600, 1000, 'title_cardK').setScale(4,4));
+
+        //pawn
+        var pawn2 = this.add.image(-300, -375, 'title_pawnB');
+        var pawn = this.add.image(-500, -375, 'title_pawnW');
+
+        //target practice
+        var shootTarget = [];
+        shootTarget.push(this.add.image(-1500, 1100, 'title_target').setScale(3,3));
+        shootTarget.push(this.add.image(-1000, 1100, 'title_target').setScale(3,3));
+        shootTarget.push(this.add.image(-500, 1100, 'title_target').setScale(3,3));
+        var crosshair = this.add.image(-400, 800, 'title_crosshair').setTint(0x000000);
+
+        //monster attack
+        var monster = this.add.image(2100, 1200, 'title_monster').setScale(3,3);
+        var monsterEye = this.add.image(2100, 1200, 'title_monsterEye').setScale(3,3);
+        var hpBarBacking = this.add.rectangle(2100, 800, 300, 40, 0x000000);
+        var hpBar = this.add.rectangle(2100 - 140, 800, 280, 30, 0xFFFFFF);
+        hpBar.setOrigin(0,0.5);
+
 
         //about 5 things should be enough
-        const timeline = this.add.timeline({   
-            at: 5000,
+        const timeline = this.add.timeline([
+            {   //ship
+                at: 1500,
+                
+                tween: {
+                    targets: follower,
+                    t:1,
+                    duration: 5000,
+                    yoyo:false,
+                    repeat: 0,
+                    onUpdate: function(tween, target)
+                    {
+                        path.getPoint(follower.t, follower.vec);
+                        
+                        ship.x = follower.vec.x;
+                        ship.y = follower.vec.y;
+
+                        path.getTangent(follower.t, follower.vec);
+                        console.log('slope '+follower.vec.x);
+
+                        ship.angle = 90+ Math.atan2(follower.vec.y, follower.vec.x) * 180 / Math.PI;
+                        
+                        console.log('x '+follower.vec.x);
+                        console.log('y '+follower.vec.y);
+                    },
+                    onComplete: () => {
+                        ship.destroy();
+                    }
+                }
+            },
+            {   //tank
+                at: 6000,
+
+                tween: {
+                    targets: [tank, tankTop],
+                    x: -49,
+                    y: 400,
+                    duration: 2000
+                }
+            },
+            {
+                at: 8000,
+
+                tween: {
+                    targets: tankTop,
+                    angle: 45,
+                    duration: 1000
+                }
+            },
+            {
+                at: 10000,
+
+                run: () => {
+                    var bullet = this.add.image(-49, 400, 'title_tankBullet');
+                    bullet.angle = 45;
+
+                    this.tweens.add({
+                        targets: bullet,
+                        x: 1049,
+                        y: -1000,
+                        duration: 2000,
+                        onComplete: () => {
+                            bullet.destroy();
+                        }
+                    });
+                }
+            },
+            {
+                at: 12000,
+
+                tween: {
+                    targets: tankTop,
+                    angle:0,
+                    duration: 1000
+                }
+            },
+            {
+                at: 12000,
+
+                tween: {
+                    targets: [tank, tankTop],
+                    x: -49,
+                    y: -1000,
+                    duration: 3000
+                }
+            },
+            {   //card
+                at: 8000,
+
+                tween: {
+                    targets: cards[0],
+                    y : 700,
+                    ease : 'Cubic.in',
+                    duration: 500
+                }
+            },
+            {
+                at: 8400,
+
+                tween: {
+                    targets: cards[1],
+                    y : 700,
+                    ease : 'Cubic.in',
+                    duration: 500
+                }
+            },
+            {
+                at: 8800,
+
+                tween: {
+                    targets: cards[2],
+                    y : 700,
+                    ease : 'Cubic.in',
+                    duration: 500
+                }
+            },
+            {   //pawn
+                at: 13000,
+
+                tween:{
+                    targets: pawn,
+                    x: -300,
+                    duration: 400,
+                    onComplete: () => {
+                        pawn2.destroy();
+                    }
+                }
+            },
+            {
+                at: 9000,
+
+                tween: {
+                    targets: crosshair,
+                    x: -1500,
+                    duration: 3000,
+                    loop: 0,
+                    yoyo: true
+                }
+            },
+            {
+                at: 16000,
+
+                tween: {
+                    targets: crosshair,
+                    x: shootTarget[0].x,
+                    y: 1270,
+                    duration: 300,
+                    onComplete: () => {
+                        var targetHit = this.tweens.create({
+                            targets: shootTarget[0],
+                            scaleX: 0,
+                            duration: 75,
+                            repeat: 7,
+                            yoyo: true,
+                            onComplete: () => {
+                                shootTarget[0].destroy();
+                            }
+                        });
             
-            tween: {
-                targets: tank,
-                x: 3000,
-                y: 3000,
-                duration: 15000
+                        this.tweens.existing(targetHit);
+                    }
+                }
+            },
+            {
+                at: 16400,
+
+                tween: {
+                    targets: crosshair,
+                    x: shootTarget[1].x,
+                    y: 1270,
+                    duration: 300,
+                    onComplete: () => {
+                        var targetHit = this.tweens.create({
+                            targets: shootTarget[1],
+                            scaleX: 0,
+                            duration: 75,
+                            repeat: 7,
+                            yoyo: true,
+                            onComplete: () => {
+                                shootTarget[1].destroy();
+                            }
+                        });
+            
+                        this.tweens.existing(targetHit);
+                    }
+                }
+            },
+            {
+                at: 16800,
+
+                tween: {
+                    targets: crosshair,
+                    x: shootTarget[2].x,
+                    y: 1270,
+                    duration: 300,
+                    onComplete: () => {
+                        var targetHit = this.tweens.create({
+                            targets: shootTarget[2],
+                            scaleX: 0,
+                            duration: 75,
+                            repeat: 7,
+                            yoyo: true,
+                            onComplete: () => {
+                                shootTarget[0].destroy();
+                            }
+                        });
+            
+                        this.tweens.existing(targetHit);
+                    }
+                }
+            },
+            { //monster
+                at:14700,
+
+                run: () => {
+                    //hit effect for monster
+                    monsterEye.setTexture('title_monsterEyeDead');
+                    monster.x += 50;
+                    monsterEye.x += 50;
+                }
+            },
+            { //monster
+                at:14800,
+
+                run: () => {
+                    //hit effect for monster
+                    monster.x -= 100;
+                    monsterEye.x -= 100;
+                }
+            },
+            { //monster
+                at:14900,
+
+                run: () => {
+                    //hit effect for monster
+                    monster.x += 75;
+                    monsterEye.x += 75;
+                }
+            },
+            { //monster
+                at:15000,
+
+                run: () => {
+                    //hit effect for monster
+                    monster.x -= 75;
+                    monsterEye.x -= 75;
+                }
+            },
+            { //monster
+                at:15100,
+
+                run: () => {
+                    //hit effect for monster
+                    monster.x += 50;
+                    monsterEye.x += 50;
+                }
+            },
+            { //monster
+                at:15200,
+
+                run: () => {
+                    //hit effect for monster
+                    monster.x -= 50;
+                    monsterEye.x -= 50;
+                }
+            },
+            { //monster
+                at:15300,
+
+                run: () => {
+                    //hit effect for monster
+                    monster.x += 50;
+                    monsterEye.x += 50;
+                }
+            },
+            { 
+                at: 15000,
+
+                tween: {
+                    targets: hpBar,
+                    scaleX: 0,
+                    duration: 1200
+                }
+            },
+            {   //everybody exit
+                at: 18000,
+
+                run: () => {
+                    //hit effect for monster
+                    [ship, tank, tankTop, cards[0], cards[1], cards[2], pawn, crosshair, monster, hpBarBacking, hpBar, shootTarget[0], shootTarget[1], shootTarget[2], monsterEye].
+                    forEach(object => {
+                        var exitTween = this.tweens.create({
+                            targets: object,
+                            x: Math.sign(object.x-640)*10000,
+                            y: Math.sign(object.y-360)*10000,
+                            ease: 'Quad.easeIn',
+                            duration: 1000,
+                            repeat: 0,
+                            yoyo: false
+                        });
+            
+                        this.tweens.existing(exitTween);
+                    })
+                }
+            },
+            { //show start
+                at: 20000,
+
+                run: () => {
+                    this.playButton.visible = true;
+                }
             }
-        });
+        ]);
 
         timeline.play();
     }
 
     ClickPlay()
-    {
+    {   //screen transition
+        //this.scene.start('BackgroundScene'); paper added transition
         this.scene.start('VersusGameScene');
     }
 

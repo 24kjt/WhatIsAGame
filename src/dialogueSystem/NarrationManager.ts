@@ -5,7 +5,12 @@ import test1 from '../dialogueSystem/dialogueJson/dialogue_test1';
 import test2 from '../dialogueSystem/dialogueJson/dialogue_test2';
 import test3 from '../dialogueSystem/dialogueJson/dialogue_test3';
 
+import versusNarration from '../dialogueSystem/dialogueJson/dialogue_versus'
+
 export class NarrationManager extends Phaser.Scene {
+    public dialogueKey: string;
+    public originalScene;
+    
     constructor() {
         super({ key: 'NarrationManager' });
     }
@@ -13,30 +18,28 @@ export class NarrationManager extends Phaser.Scene {
 
     create() {
         this.scene.bringToTop();
+    }
 
+    startDialogue()
+    {
         //make subtitle
         this.subtitleSystem = new SubtitleShower(this);
         this.dialogue = dialogueData;
 
-
-        console.log('AAAA ' + dialogueData.test1);
-
-        this.playDialogueSegment("test1", "start");
+        console.log('ddddd ' +this.scene.dialogueKey);
+        this.playDialogueSegment(this.scene.dialogueKey, "start");
     }
 
-    /*
+    
     update() {
         //test function
-                if (this.input.keyboard.addKey('R').isDown) {
-            this.subtitleSystem.displayText('the quick brown fox jumped over the lazy fox', 2)
-        
-            this.snd_ballBounce.play({
-                volume: 0.5,
-                loop: false
-            });
+                if (this.input.keyboard.addKey('Enter').isDown) {
+                    //next line
+                    this.timer.elapsed = this.timer.delay-10;
+                    this.sndClip.stop();
         }
     }
-    */
+    
 
     playDialogueSegment(dialogueKey, dialogueID) {
 
@@ -44,6 +47,11 @@ export class NarrationManager extends Phaser.Scene {
         var data = dialogueJson[dialogueID];
 
         this.playDialogue(dialogueJson, dialogueID);
+
+        if(data.hasOwnProperty('sceneAction') )
+        {
+            this.scene.originalScene.PlaySceneAction(data.sceneAction);
+        }
 
         if(data.nextLine != "")
         {
@@ -60,7 +68,7 @@ export class NarrationManager extends Phaser.Scene {
             {
                 this.scene.launch('VotingScene'); // true means start immediately
                 var voteScene = this.scene.get('VotingScene');
-                console.log(voteScene);
+                voteScene.scene.voteKey = data.voteKey;
                 var nextDialogue = ""; //string key for next dialogue
                 //attach event listener to voteYes and voteNo
                 
@@ -74,11 +82,13 @@ export class NarrationManager extends Phaser.Scene {
                         {
                             var temp = dialogueData[dialogueKey];
                             nextDialogue = temp.yes;
+                           // this.scene.originalScene.votedYes();
                         }
                         else
                         {
                             var temp = dialogueData[dialogueKey];
                             nextDialogue = temp.no;
+                          //  this.scene.originalScene.votedNo();
                         }
 
                         console.log(nextDialogue);
@@ -109,12 +119,15 @@ export class NarrationManager extends Phaser.Scene {
 
     playDialogue(dialogueJson, dialogueID: string){
         var data = dialogueJson[dialogueID];
-
-        var sndClip = this.sound.add(data.audioFile)
-        sndClip.play({
-            volume: 0.5,
-            loop: false
-        });
+        console.log(dialogueID)
+        if(!this.sound.locked)
+        {
+            this.sndClip = this.sound.add(data.audioFile)
+            this.sndClip.play({
+                volume: 1,
+                loop: false
+            });
+        }
 
         this.subtitleSystem.displayText(data.text, data.duration);
     }
@@ -123,6 +136,11 @@ export class NarrationManager extends Phaser.Scene {
         var returnValue;
 
         switch(key) { 
+            case "versus":{
+                console.log('versus');
+               returnValue = versusNarration;
+                break
+            }
             case "test1": { 
                //statements; 
                console.log('case 1');

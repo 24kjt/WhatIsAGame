@@ -8,6 +8,13 @@
             },
             {
                 "url": [
+                    "assets/audio/Narration/silence.ogg"
+                ],
+                "type": "audio",
+                "key": "n_silence"
+            },
+            {
+                "url": [
                     "assets/audio/PumpSound.wav"
                 ],
                 "type": "audio",
@@ -68,10 +75,364 @@
                 ],
                 "type": "image",
                 "key": "title_buttonQuestion"
-            }
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/spaceShip.png"
+                ],
+                "type": "image",
+                "key": "title_spaceShip"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/tankBody.png"
+                ],
+                "type": "image",
+                "key": "title_tankBody"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/tankHead.png"
+                ],
+                "type": "image",
+                "key": "title_tankHead"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/tankBullet.png"
+                ],
+                "type": "image",
+                "key": "title_tankBullet"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/card_spades_J.png"
+                ],
+                "type": "image",
+                "key": "title_cardJ"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/card_spades_Q.png"
+                ],
+                "type": "image",
+                "key": "title_cardQ"
+            },   
+            {
+                "url": [
+                    "assets/sprites/titleScene/card_spades_K.png"
+                ],
+                "type": "image",
+                "key": "title_cardK",
+                "pixelArt": true
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/pawn.png"
+                ],
+                "type": "image",
+                "key": "title_pawnW"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/pawn_b.png"
+                ],
+                "type": "image",
+                "key": "title_pawnB"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/crosshair.png"
+                ],
+                "type": "image",
+                "key": "title_crosshair"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/personTarget.png"
+                ],
+                "type": "image",
+                "key": "title_target"
+            },
+            {
+                "url": [
+                    "assets/sprites/titleScene/monster.png"
+                ],
+                "type": "image",
+                "key": "title_monster"
+            }, 
+            {
+                "url": [
+                    "assets/sprites/titleScene/monstereye.png"
+                ],
+                "type": "image",
+                "key": "title_monsterEye"
+            },  
+            {
+                "url": [
+                    "assets/sprites/titleScene/monstereyeDead.png"
+                ],
+                "type": "image",
+                "key": "title_monsterEyeDead"
+            }                         
 
         ]
     },
+    "versusScene":{
+        "files" :[
+        {
+            "url": [
+                "assets/sprites/versusScene/soccerBall.png"
+            ],
+            "type": "image",
+            "key": "versus_soccerBall"
+        },
+        {
+            "url": [
+                "assets/sprites/versusScene/soccerBall.png"
+            ],
+            "type": "image",
+            "key": "versus_star"
+        },
+        {
+            "url": [
+                "assets/sprites/versusScene/progressionBody.png"
+            ],
+            "type": "image",
+            "key": "versus_progressionBody"
+        },
+        {
+            "url": [
+                "assets/sprites/versusScene/progressionHeader.png"
+            ],
+            "type": "image",
+            "key": "versus_progressionHeader"
+        },
+        {
+            "url": [
+                "assets/sprites/versusScene/pseudoBackground.png"
+            ],
+            "type": "image",
+            "key": "versus_pseudoBG"
+        },
+        {
+            "url": [
+                "assets/sprites/versusScene/welcomePackage.png"
+            ],
+            "type": "image",
+            "key": "versus_welcomeHeader"
+        },  
+        {
+            "url": [
+                "assets/sprites/versusScene/welcomePackageBody.png"
+            ],
+            "type": "image",
+            "key": "versus_welcomeBody"
+        },        
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_1.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_01"
+        },
+        {
+            "url": [
+                "assets/sprites/versusScene/star.png"
+            ],
+            "type": "image",
+            "key": "versus_star"
+        },        
+        {
+            "url": [
+                "assets/audio/versus/CGM3_Small_Quest_Complete_02.wav"
+            ],
+            "type": "audio",
+            "key": "versus_stinger"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_2.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_02"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_3.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_03"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_4.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_04"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_5.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_05"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_6.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_06"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_7.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_07"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_8.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_08"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_9.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_09"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_10.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_10"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_11.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_11"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_12.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_12"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_13.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_13"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_14.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_14"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_15.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_15"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_16.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_16"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_17.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_17"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_18.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_18"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_19.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_19"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_20.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_20"
+        },
+        {
+            "url": [
+                "assets/audio/Narration/Versus/0/versus_21.ogg"
+            ],
+            "type": "audio",
+            "key": "n_versus_21"
+        }
+    ]
+    },
+    "voteScene":{
+        "files": [
+            {
+                "url": [
+                    "assets/sprites/voteScene/yes.png"
+                ],
+                "type": "image",
+                "key": "vote_yes"            
+            },
+            {
+                "url": [
+                    "assets/sprites/voteScene/no.png"
+                ],
+                "type": "image",
+                "key": "vote_no"            
+            },
+            {
+                "url": [
+                    "assets/sprites/voteScene/question.png"
+                ],
+                "type": "image",
+                "key": "vote_question"            
+            },
+            {
+                "url": [
+                    "assets/sprites/voteScene/container.png"
+                ],
+                "type": "image",
+                "key": "vote_container"            
+            },
+            {
+                "url": [
+                    "assets/sprites/voteScene/voteBar.png"
+                ],
+                "type": "image",
+                "key": "vote_voteBar"            
+            }
+        ]
+
+    },
+
     "meta": {
         "app": "Phaser Editor 2D - Asset Pack Editor",
         "contentType": "phasereditor2d.pack.core.AssetContentType",

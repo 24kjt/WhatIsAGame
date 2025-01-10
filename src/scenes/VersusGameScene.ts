@@ -23,17 +23,26 @@ export class VersusGameScene extends Phaser.Scene {
         /* END-USER-CTR-CODE */
         this.freeXMovement = false;
         this.targetPos = 0;
-        this.opponentMovementActive = true;
+        this.opponentMovementActive = false;
         this.playerMovementActive = true;
+
+        this.selectionTree = [];
     }
 
 
     preload() {
         this.load.audio('ballBounce', 'assets/audio/PumpSound.wav'); // correct
+        this.load.spritesheet('robotWalk', 'assets/sprites/versusScene/robotWalkCycle.png', { frameWidth: 96, frameHeight: 128 });
+
     }
 
 
     create() {
+        let screenWidth = this.scale.gameSize.width;
+
+        this.backgroundPaper = this.add.image(0,0, 'paperBG');
+
+
         //  Input events
         this.freeXMovement = false;
         this.input.on('pointermove', function (pointer)
@@ -54,18 +63,18 @@ export class VersusGameScene extends Phaser.Scene {
         //this.freeXMovement = false;
 
         // Create paddles
-        this.leftPaddle = this.add.rectangle(50, 300, 20, 60, 0xFFFFFF);
-        this.rightPaddle = this.add.rectangle(750, 300, 20, 60, 0xFFFFFF);
+        this.leftPaddle = this.add.rectangle(300, 300, 20, 60, 0x1C1C1C);
+        this.rightPaddle = this.add.rectangle(screenWidth-300, 300, 20, 60, 0x1C1C1C);
         this.rightPaddle.setOrigin(0.5, 0.5);
 
         // Create ball
-        this.ball = this.add.circle(400, 300, 10, 0xFFFFFF);
+        this.ball = this.add.circle(400, 300, 10, 0x1C1C1C);
         this.snd_ballBounce = this.sound.add('ballBounce');
 
         //Create center line
-        for(let i =0; i<20;i++)
+        for(let i =0; i<30;i++)
         {
-            this.add.rectangle(this.scale.gameSize.width/2, 30*i, 5, 15, 0xFFFFFF);
+            this.add.rectangle(this.scale.gameSize.width/2, 30*i, 5, 15, 0x1C1C1C);
         }
 
         // Enable physics
@@ -97,25 +106,57 @@ export class VersusGameScene extends Phaser.Scene {
 
 
         // Add score text
-        this.scoreTextLeft = this.add.text(200, 50, '0', {
+        this.scoreTextLeft = this.add.text(400, 50, '0', {
             fontSize: '48px',
-            color: '#FFFFFF'
+            color: '#1C1C1C'
         });
-        this.scoreTextRight = this.add.text(600, 50, '0', {
+        this.scoreTextRight = this.add.text(screenWidth-400, 50, '0', {
             fontSize: '48px',
-            color: '#FFFFFF'
+            color: '#1C1C1C'
         });
 
         // Start the game
-        this.resetBall();
+        //this.resetBall();
+        //this.StartSequence();
 
         // In your VersusGameScene or any other scene
         //this.scene.launch('VotingScene'); // true means start immediately
         this.scene.launch('NarrationManager'); // true means start immediately
+        var narration = this.scene.get('NarrationManager');
+        narration.scene.dialogueKey = "versus";
+        narration.scene.originalScene = this;
+        narration.startDialogue();
+
         this.OpponentSetLingeringPosition();
+
+
+        this.anims.create({
+            key: 'walk',
+            frames: this.anims.generateFrameNumbers('robotWalk', { frames: [ 0, 1, 2, 3,4,5,6,7 ] }),
+            frameRate: 8,
+            repeat: -1
+        });
+
+
+        this.coverBGPaper = this.add.image(640,360, 'versus_pseudoBG');
+        this.coverPaddle = this.add.sprite(this.leftPaddle.x, this.leftPaddle.y);
+        this.coverPaddle.setScale(1.25);
+        this.coverPaddle.play('walk');
+        this.coverPaddle2 = this.add.sprite(this.rightPaddle.x, this.rightPaddle.y);
+        this.coverPaddle2.setScale(1.25);
+        this.coverPaddle2.play('walk');
+        this.coverPaddle2.flipX = true;
+        this.coverBall = this.add.image(this.ball.x, this.ball.y,'versus_soccerBall');
+        
+
+        //
     }
 
     update(time, delta) {
+        if(this.coverPaddle)
+        {
+            this.coverPaddle.y = this.leftPaddle.y;
+        }
         // Left paddle controls (W and S keys)
         if (this.input.keyboard.addKey('W').isDown) {
             this.leftPaddle.y -= 7;
@@ -196,7 +237,7 @@ export class VersusGameScene extends Phaser.Scene {
         }
 
         this.snd_ballBounce.play({
-            volume: 0.5,
+            volume: 0.15,
             loop: false
         });
 
@@ -207,7 +248,7 @@ export class VersusGameScene extends Phaser.Scene {
         paddle.y = Phaser.Math.Clamp(
             paddle.y,
             paddle.height / 2,
-            600 - paddle.height / 2
+            720 - paddle.height / 2
         );
     }
 
@@ -217,7 +258,7 @@ export class VersusGameScene extends Phaser.Scene {
             this.scoreRight++;
             this.scoreTextRight.setText(this.scoreRight.toString());
             this.resetBall();
-        } else if (this.ball.x > 780) {
+        } else if (this.ball.x > 1260) {
             // Left player scores
             this.scoreLeft++;
             this.scoreTextLeft.setText(this.scoreLeft.toString());
@@ -226,7 +267,8 @@ export class VersusGameScene extends Phaser.Scene {
     }
 
     private resetBall() {
-        this.ball.setPosition(400, 300);
+        let screenWidth = this.scale.gameSize.width;
+        this.ball.setPosition(screenWidth/2, 300);
         this.ballSpeed = this.ballSpeedOriginal;
 
         const ballBody = this.ball.body as Phaser.Physics.Arcade.Body;
@@ -263,8 +305,10 @@ export class VersusGameScene extends Phaser.Scene {
             noiseConstant = 5;   
         }
 
-
-        speedConstant *= (this.rightPaddle.x - this.leftPaddle.x)/(100+this.rightPaddle.x - this.ball.x);
+        if(this.ball.x < this.rightPaddle.x)
+        {
+            speedConstant *= (this.rightPaddle.x - this.leftPaddle.x)/(100+this.rightPaddle.x - this.ball.x);
+        }
 
         var noise = Phaser.Math.Between(-noiseConstant, noiseConstant);
 
@@ -297,7 +341,7 @@ export class VersusGameScene extends Phaser.Scene {
         {
             console.log('wall off player');
         //spawn box on player side
-            this.playerWall = this.add.rectangle(-50, 0, 50, this.scale.gameSize.height*2, 0xFFFFFF);
+            this.playerWall = this.add.rectangle(-50, 0, 50, this.scale.gameSize.height*2, 0x1C1C1C);
             this.physics.add.existing(this.playerWall);
             const wall = this.playerWall.body as Phaser.Physics.Arcade.Body;
             wall.setImmovable(true);
@@ -307,9 +351,9 @@ export class VersusGameScene extends Phaser.Scene {
             //entry animation
             var tween = this.tweens.create({
                 targets: this.playerWall,
-                x: { from: -50, to: 0 },
+                x: { from: -50, to: 200 },
                 ease: 'Linear',
-                duration: 3000,
+                duration: 6000,
                 repeat: 0,
                 yoyo: false
             });
@@ -335,7 +379,7 @@ export class VersusGameScene extends Phaser.Scene {
             {
                 console.log('wall off opp');
             //spawn box on player side
-                this.opponentWall = this.add.rectangle(width+25, 0, 50, this.scale.gameSize.height*2, 0xFFFFFF);
+                this.opponentWall = this.add.rectangle(width+25, 0, 50, this.scale.gameSize.height*2, 0x1C1C1C);
                 this.physics.add.existing(this.opponentWall);
                 const wall = this.opponentWall.body as Phaser.Physics.Arcade.Body;
                 wall.setImmovable(true);
@@ -343,9 +387,9 @@ export class VersusGameScene extends Phaser.Scene {
                 //entry animation
                 var tween = this.tweens.create({
                     targets: this.opponentWall,
-                    x: { from: width+25 , to: width },
+                    x: { from: width+25 , to: width-200 },
                     ease: 'Linear',
-                    duration: 3000,
+                    duration: 6000,
                     repeat: 0,
                     yoyo: false
                 });
@@ -421,6 +465,430 @@ export class VersusGameScene extends Phaser.Scene {
     CheerButtonPressed()
     {
         console.log('Cheer button pressed');
+    }
+
+    PossessOpponent()
+    {
+        const timeline = this.add.timeline([
+            {   //possess opponent
+                at: 0,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle:50,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 1500,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    y: '-=30',
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 2700,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    y: '+=70',
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 3700,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle:-50,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 4700,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: 40,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 4850,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: -30,
+                    duration: 70,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 5000,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: 20,
+                    duration: 70,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 5100,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: -20,
+                    duration: 40,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 6500,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    y:100,
+                    ease: 'Sine.inOut', 
+                    duration: 150,
+                    yoyo: true,
+                    repeat: 1.5,
+                }
+            },
+            {
+                at: 7500,
+
+                run: () => {
+                    this.opponentMovementActive = true;
+                },
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: 0,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0
+                }
+            }
+            
+        ]);
+
+        timeline.play();
+    }
+
+    EnterComplicated()
+    {
+        this.welcomeBody = this.add.image(1700,500-150, 'versus_welcomeBody');
+        this.welcomeHeader = this.add.image(1700,300-150, 'versus_welcomeHeader');
+
+        this.progressionBody = this.add.image(-500, 500-150, 'versus_progressionBody');
+        this.progressionHeader = this.add.image(-500,380-150, 'versus_progressionHeader');
+
+        this.star = this.add.image(700,1500,'versus_star');
+        //add star velocity
+
+        const timeline = this.add.timeline([
+            {
+                at: 500,
+                
+                run: () => {
+                    //play audio
+                    //CONTINUE HERE CONTINUE HERE CONTINUE HERE
+                    //add star gravity and launch up
+                }
+            },
+            {
+                at: 3400,
+                
+                tween: {
+                    targets: [this.welcomeHeader, this.welcomeBody],
+                    x:1000,
+                    ease: 'Sine.inOut', 
+                    duration: 1000,
+                    yoyo: false,
+                    repeat: 0,
+                }
+            },
+            {
+                at: 2800,
+                
+                tween: {
+                    targets: [this.progressionHeader, this.progressionBody],
+                    x:300,
+                    ease: 'Sine.inOut', 
+                    duration: 1000,
+                    yoyo: false,
+                    repeat: 0,
+                }
+            }
+        ]);
+
+        timeline.play();
+    }
+
+    ExitComplicated()
+    {
+        const timeline = this.add.timeline([
+            {
+                at: 1500,
+
+                run: () => {
+                    this.progressionHeader.destroy(); 
+                    this.progressionBody.destroy();
+                    this.welcomeHeader.destroy();
+                    this.welcomeBody.destroy();
+                }
+            }
+        ]);
+
+        timeline.play();
+    }
+
+    RemoveBG()
+    {
+        const timeline = this.add.timeline([
+            {
+                at: 500,
+
+                run: () => {
+                    this.coverBGPaper.destroy();
+                }
+            },
+            {
+                at: 2800,
+
+                run: () => {
+                    this.coverPaddle.destroy();
+                    this.coverPaddle2.destroy();
+                    this.coverBall.destroy();
+
+                }
+            }
+        ]);
+
+        timeline.play();
+    }
+
+    PlaySceneAction(actionKey)
+    {
+        switch(actionKey)
+        {
+            case "possessOpponent":
+                this.PossessOpponent();
+                break;
+            case "wallOffPlayer":
+                this.WallOffPlayerSide(true);
+                break;
+            case "wallOffOpponent":
+                this.WallOffOpponentSide(true);
+                break;
+            case "turnOpponentIntoWall":
+                this.TurnEnemyIntoWall();
+                break;
+            case "freePongMovement":
+                this.FreePongMovementAxis();
+                break;
+            case "takeAwayPlayerControl":
+                this.TakeAwayPlayerControl();
+                break;
+            case "takeAwayAIControl":
+                this.TakeAwayAIControl();
+                break;
+            case "addCheerFunction":
+                this.AddCheerFunction();
+                break;
+            case "startGame":
+                this.resetBall();
+                break;
+            case "complicatedEntry":
+                this.EnterComplicated();
+                break;
+            case "complicatedExit":
+                this.ExitComplicated();
+                break;
+            case "removeBG":
+                this.RemoveBG();
+                break;
+            default:
+                console.log("Action not found");
+                break;
+        }
+    }
+    /*votedYes()
+    {
+        console.log("Scene voted yes");
+        this.selectionTree.push(true);
+        this.votingReaction();
+    }
+
+    votedNo()
+    {
+        console.log("scene voted no");
+        this.selectionTree.push(false);
+        this.votingReaction();
+    }*/
+
+
+
+    StartSequence()
+    {
+        //starting sequence to possess opponent
+        const timeline = this.add.timeline([
+            {   //possess opponent
+                at: 1500,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle:50,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 3000,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    y: '-=30',
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 4200,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    y: '+=70',
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 5200,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle:-50,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 6200,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: 40,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 6350,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: -30,
+                    duration: 70,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 6500,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: 20,
+                    duration: 70,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 6600,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: -20,
+                    duration: 40,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 8000,
+                
+                tween: {
+                    targets: this.rightPaddle,
+                    y:100,
+                    ease: 'Sine.inOut', 
+                    duration: 150,
+                    yoyo: true,
+                    repeat: 1.5,
+                }
+            },
+            {
+                at: 9000,
+
+                run: () => {
+                    this.opponentMovementActive = true;
+                },
+                tween: {
+                    targets: this.rightPaddle,
+                    angle: 0,
+                    duration: 100,
+                    yoyo:false,
+                    repeat: 0
+                }
+            },
+            {
+                at: 15000,
+
+                run: () => {
+                    this.resetBall();
+                }
+            },
+            {
+                at: 18000,
+
+                run: () => {
+                    this.WallOffPlayerSide(true);                
+                }
+            },
+            {
+                at: 20000,
+
+                run: () => {
+                    //ask is this a game vote
+                    //this.scene.start('VotingScene', "questionTest");
+                }
+            }
+            
+        ]);
+
+        timeline.play();
+
     }
 
     /* END-USER-CODE */
