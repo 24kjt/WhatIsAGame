@@ -5,6 +5,9 @@ import test1 from '../dialogueSystem/dialogueJson/dialogue_test1';
 import test2 from '../dialogueSystem/dialogueJson/dialogue_test2';
 import test3 from '../dialogueSystem/dialogueJson/dialogue_test3';
 
+import title from '../dialogueSystem/dialogueJson/dialogue_title'
+
+
 import versusNarration from '../dialogueSystem/dialogueJson/dialogue_versus'
 import versusNarration_y from '../dialogueSystem/dialogueJson/dialogue_versus_y'
 import versusNarration_yy from '../dialogueSystem/dialogueJson/dialogue_versus_yy'
@@ -12,6 +15,11 @@ import versusNarration_yn from '../dialogueSystem/dialogueJson/dialogue_versus_y
 import versusNarration_n from '../dialogueSystem/dialogueJson/dialogue_versus_n'
 import versusNarration_ny from '../dialogueSystem/dialogueJson/dialogue_versus_ny'
 import versusNarration_nn from '../dialogueSystem/dialogueJson/dialogue_versus_nn'
+
+import storyNarration from '../dialogueSystem/dialogueJson/dialogue_story'
+import storyNarration_y from '../dialogueSystem/dialogueJson/dialogue_story_y'
+import storyNarration_n from '../dialogueSystem/dialogueJson/dialogue_story_n'
+
 
 export class NarrationManager extends Phaser.Scene {
     public dialogueKey: string;
@@ -144,6 +152,11 @@ export class NarrationManager extends Phaser.Scene {
         var returnValue;
 
         switch(key) { 
+            case "title":{
+                console.log('versus');
+               returnValue = title;
+                break
+            }
             case "versus":{
                 console.log('versus');
                returnValue = versusNarration;
@@ -177,6 +190,21 @@ export class NarrationManager extends Phaser.Scene {
             case "versus_nn":{
                 console.log('versus nn');
                returnValue = versusNarration_nn;
+                break
+            }
+            case "story":{
+                console.log('story');
+               returnValue = storyNarration;
+                break
+            }
+            case "story_y":{
+                console.log('story_y');
+               returnValue = storyNarration_y;
+                break
+            }
+            case "story_n":{
+                console.log('story_n');
+               returnValue = storyNarration_n;
                 break
             }
             case "test1": { 

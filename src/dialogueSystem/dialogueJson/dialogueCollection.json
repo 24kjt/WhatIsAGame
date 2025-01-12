@@ -1,4 +1,7 @@
 {
+    "title": {
+        "file" : "dialogue_title"
+    },
     "test1": {
         "file" : "dialogue_test1",
         "yes" : "test2",
@@ -40,5 +43,19 @@
     },
     "versus_nn": {
         "file" : "dialogue_versus_nn"
+    },
+    "story": {
+        "file" : "dialogue_story",
+        "yes" : "story_y",
+        "no": "story_n"
+    },
+    "story_y": {
+        "file": "dialogue_story_y"
+    }
+    ,
+    "story_n": {
+        "file": "dialogue_story_n",
+        "yes": "story_ny",
+        "no": "story_nn"
     }
 }

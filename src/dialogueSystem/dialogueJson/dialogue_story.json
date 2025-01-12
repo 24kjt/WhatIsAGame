@@ -1,0 +1,39 @@
+{
+    "start": {
+        "audioFile": "n_story_01",
+        "text": "Good evening, detective...",
+        "duration": 1500,
+        "nextLine": "2",
+        "nextLineDelay" : 1700
+    },
+    "2": {
+        "audioFile": "n_story_02",
+        "text": "I see you found my hideout!",
+        "duration": 2000,        
+        "nextLine": "3",
+        "nextLineDelay" : 2200
+    },
+    "3": {
+        "audioFile": "n_story_03",
+        "text": "Well, I admire your efforts, but they have been in vain",
+        "duration": 4100,        
+        "nextLine": "4",
+        "nextLineDelay" : 4300
+    },
+    "4": {
+        "audioFile": "n_story_04",
+        "text": "Goodbye detective!",
+        "duration": 1300,        
+        "nextLine": "5",
+        "nextLineDelay" : 1500
+    },
+    "5": {
+        "audioFile": "n_story_05",
+        "text": "Is this a game?",
+        "duration": 1300,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 1500,
+        "voteKey": "story_0"
+    }
+}

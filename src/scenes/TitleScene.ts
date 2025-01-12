@@ -24,6 +24,9 @@ export class TitleScene extends Phaser.Scene {
     }
 
     create(){
+        
+
+
         let worldSize = 100000;
         this.physics.world.setBounds(-worldSize/2, -worldSize/2, worldSize, worldSize);
         //this.cameras.main.setBounds(0, 0, 800, 700);
@@ -109,6 +112,13 @@ export class TitleScene extends Phaser.Scene {
                     }
 
                     this.AddSnakePellet();
+
+                    this.scene.launch('NarrationManager'); // true means start immediately
+                    var narration = this.scene.get('NarrationManager');
+                    narration.scene.dialogueKey = "title";
+                    //narration.scene.dialogueKey = "versus_y";
+                    narration.scene.originalScene = this;
+                    narration.startDialogue();
                    
                 }
                 break;
@@ -137,7 +147,15 @@ export class TitleScene extends Phaser.Scene {
 
                 if(!this.resolveStateEntry)
                 {
-                    this.ZoomOut();
+                    this.timer = this.time.addEvent({
+                        delay: 10000, // milliseconds
+                        callback: () => {
+                            this.ZoomOut();
+
+                        } ,
+                        callbackScope: this,
+                        loop: false
+                    });
                     this.resolveStateEntry = true;
                 }
                 break;
@@ -665,6 +683,9 @@ export class TitleScene extends Phaser.Scene {
     {   //screen transition
         //this.scene.start('BackgroundScene'); paper added transition
         this.scene.start('VersusGameScene');
+
+        var narration = this.scene.get('NarrationManager');
+        narration.scene.stop();
     }
 
 

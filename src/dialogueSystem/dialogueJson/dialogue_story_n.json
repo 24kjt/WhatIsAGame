@@ -1,0 +1,39 @@
+{
+    "start": {
+        "audioFile": "n_story_n_01",
+        "text": "Of course!",
+        "duration": 800,
+        "nextLine": "2",
+        "nextLineDelay" : 1000
+    },
+    "2": {
+        "audioFile": "n_story_n_02",
+        "text": "There was no INTERACTIVITY with that",
+        "duration": 2800,        
+        "nextLine": "3",
+        "nextLineDelay" : 3000
+    },
+    "3": {
+        "audioFile": "n_story_n_03",
+        "text": "If that was a game, and book, movie, or music would be a game as well",
+        "duration": 5400,        
+        "nextLine": "4",
+        "nextLineDelay" : 5600
+    },
+    "4": {
+        "audioFile": "n_story_n_04",
+        "text": "So here, here's the interactivity to make it a game",
+        "duration": 4200,        
+        "nextLine": "5",
+        "nextLineDelay" : 4400
+    },
+    "5": {
+        "audioFile": "n_story_n_05",
+        "text": "Is this now a game?",
+        "duration": 1150,
+        "nextLine": "",
+        "nextLineDelay" : 1350,
+        "event": "vote",
+        "voteKey": "story_n"
+    }
+}

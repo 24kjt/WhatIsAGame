@@ -1,0 +1,86 @@
+{
+    "start": {
+        "audioFile": "n_title_01",
+        "text": "What is a game?",
+        "duration":1800,
+        "nextLine": "2",
+        "nextLineDelay" : 2400
+    },
+    "2": {
+        "audioFile": "n_title_02",
+        "text": "What makes something count as a game as opposed to books, movies, or even real life activities?",
+        "duration": 5100,
+        "nextLine": "3",
+        "nextLineDelay" : 5300
+    },
+    "3": {
+        "audioFile": "n_title_03",
+        "text": "Is it interactivity?",
+        "duration": 1200,
+        "nextLine": "4",
+        "nextLineDelay" : 1400
+    },
+    "4": {
+        "audioFile": "n_title_04",
+        "text": "Being able to lose?",
+        "duration": 1000,
+        "nextLine": "5",
+        "nextLineDelay" : 1200
+    },
+    "5": {
+        "audioFile": "n_title_05",
+        "text": "Or maybe it's just the mere presence of fun",
+        "duration": 2300,
+        "nextLine": "6",
+        "nextLineDelay" : 2500
+    },
+    "6": {
+        "audioFile": "n_title_06",
+        "text": "From philosophers to game developers",
+        "duration": 2400,
+        "nextLine": "7",
+        "nextLineDelay" : 2600
+    },
+    "7": {
+        "audioFile": "n_title_07",
+        "text": "There have been numerous attempts at pinning down the exact definition of what a game is",
+        "duration": 3800,
+        "nextLine": "8",
+        "nextLineDelay" : 4000
+    },
+    "8": {
+        "audioFile": "n_title_08",
+        "text": "But, in this game, we're going to find out what YOU define as a game",
+        "duration": 5300,
+        "nextLine": "12",
+        "nextLineDelay" : 5500
+    },
+    "9": {
+        "audioFile": "n_title_09",
+        "text": "Maybe you already have a clear definition",
+        "duration": 1800,
+        "nextLine": "10",
+        "nextLineDelay" : 2000
+    },
+    "10": {
+        "audioFile": "n_title_10",
+        "text": "Maybe your definition will change after this",
+        "duration": 2100,
+        "nextLine": "11",
+        "nextLineDelay" : 2300
+    },
+    "11": {
+        "audioFile": "n_title_11",
+        "text": "Maybe, you'll even give up on defining what a game is",
+        "duration": 3100,
+        "nextLine": "12",
+        "nextLineDelay" : 3300
+    },
+    "12": {
+        "audioFile": "n_title_12",
+        "text": "My name is Jintae Kim, and welcome to WhatIsAGame.net",
+        "duration": 4850,
+        "nextLine": "",
+        "nextLineDelay" : 5050
+    }
+}

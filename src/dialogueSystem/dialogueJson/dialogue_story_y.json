@@ -1,0 +1,52 @@
+{
+    "start": {
+        "audioFile": "n_story_y_01",
+        "text": "Realy?",
+        "duration": 500,
+        "nextLine": "2",
+        "nextLineDelay" : 700
+    },
+    "2": {
+        "audioFile": "n_story_y_02",
+        "text": "That seemed more like a movie or a book than a game to me",
+        "duration": 4600,        
+        "nextLine": "3",
+        "nextLineDelay" : 4800
+    },
+    "3": {
+        "audioFile": "n_story_y_03",
+        "text": "But, it is your definition",
+        "duration": 1600,        
+        "nextLine": "4",
+        "nextLineDelay" : 1800
+    },
+    "4": {
+        "audioFile": "n_story_y_04",
+        "text": "So, to you, it doesn't matter if the player is interacting with the medium at all",
+        "duration": 4600,        
+        "nextLine": "5",
+        "nextLineDelay" : 4800
+    },
+    "5": {
+        "audioFile": "n_story_y_05",
+        "text": "So, what's the difference?",
+        "duration": 2000,        
+        "nextLine": "6",
+        "nextLineDelay" : 2200
+    },
+    "6": {
+        "audioFile": "n_story_y_06",
+        "text": "Is there a difference?",
+        "duration": 1200,        
+        "nextLine": "7",
+        "nextLineDelay" : 1400
+    },
+    "7": {
+        "audioFile": "n_story_y_07",
+        "text": "Maybe we need to look, a bit outside of the game",
+        "duration": 3700,
+        "nextLine": "",
+        "nextLineDelay" : 1500,
+        "sceneAction" : "endOfScene"
+    }
+}

@@ -66,6 +66,14 @@ export class StoryScene extends Phaser.Scene {
         this.showingChoices = false;
 
         this.SetHonkButton(this.modeHonkButton);
+
+        //start narration
+        this.scene.launch('NarrationManager'); // true means start immediately
+        var narration = this.scene.get('NarrationManager');
+        narration.scene.dialogueKey = "story";
+        narration.scene.originalScene = this;
+        narration.startDialogue();
+
     }
 
     update(time: number, delta: number): void {
