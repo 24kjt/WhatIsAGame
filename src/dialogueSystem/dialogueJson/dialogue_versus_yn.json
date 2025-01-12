@@ -1,0 +1,45 @@
+{
+    "start": {
+        "audioFile": "n_versus_yn_01",
+        "text": "Ah, so your definition of a game defined by an activity with a goal you can accomplish",
+        "duration":4800,
+        "nextLine": "2",
+        "nextLineDelay" : 4900
+    },
+    "2": {
+        "audioFile": "n_versus_yn_02",
+        "text": "No goal, no game",
+        "duration": 1700,
+        "nextLine": "3",
+        "nextLineDelay" : 1800
+    },
+    "3": {
+        "audioFile": "n_versus_yn_03",
+        "text": "But, that still seems a bit broad doesn't it?",
+        "duration": 3600,
+        "nextLine": "4",
+        "nextLineDelay" : 3800
+    },
+    "4": {
+        "audioFile": "n_versus_yn_04",
+        "text": "I feel like we're still missing some key part of the definition",
+        "duration": 3500,
+        "nextLine": "5",
+        "nextLineDelay" : 3700
+    },
+    "5": {
+        "audioFile": "n_versus_yn_05",
+        "text": "Something like...",
+        "duration": 1100,
+        "nextLine": "6",
+        "nextLineDelay" : 1300
+    },
+    "6": {
+        "audioFile": "n_versus_yn_06",
+        "text": "Interactivity",
+        "duration": 800,
+        "nextLine": "",
+        "sceneAction": "endOfScene",
+        "nextLineDelay" : 900
+    }
+}

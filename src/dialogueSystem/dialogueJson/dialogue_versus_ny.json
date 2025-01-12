@@ -1,0 +1,66 @@
+{
+    "start": {
+        "audioFile": "n_versus_ny_01",
+        "text": "I see",
+        "duration":600,
+        "nextLine": "2",
+        "nextLineDelay" : 800
+    },
+    "2": {
+        "audioFile": "n_versus_ny_02",
+        "text": "So whether or not you can meet a goal is irrelevant",
+        "duration": 2300,
+        "nextLine": "3",
+        "nextLineDelay" : 2500
+    },
+    "3": {
+        "audioFile": "n_versus_ny_03",
+        "text": "but the important part is that you can lose",
+        "duration": 1900,
+        "nextLine": "4",
+        "nextLineDelay" : 2100
+    },
+    "4": {
+        "audioFile": "n_versus_ny_04",
+        "text": "I do suppose genres like endless runners and old-school arcade games have designs where it can only end in your defeat",
+        "duration": 5100,
+        "nextLine": "5",
+        "nextLineDelay" : 5300
+    },
+    "5": {
+        "audioFile": "n_versus_ny_05",
+        "text": "So a game is an activity where you can lose",
+        "duration": 2950 ,
+        "nextLine": "6",
+        "nextLineDelay" : 3200
+    },
+    "6": {
+        "audioFile": "n_versus_yn_03",
+        "text": "But, that still seems a bit broad doesn't it?",
+        "duration": 3600,
+        "nextLine": "7",
+        "nextLineDelay" : 3800
+    },
+    "7": {
+        "audioFile": "n_versus_yn_04",
+        "text": "I feel like we're still missing some key part of the definition",
+        "duration": 3500,
+        "nextLine": "8",
+        "nextLineDelay" : 3700
+    },
+    "8": {
+        "audioFile": "n_versus_yn_05",
+        "text": "Something like...",
+        "duration": 1100,
+        "nextLine": "9",
+        "nextLineDelay" : 1300
+    },
+    "9": {
+        "audioFile": "n_versus_yn_06",
+        "text": "Interactivity",
+        "duration": 800,
+        "nextLine": "",
+        "sceneAction": "endOfScene",
+        "nextLineDelay" : 900
+    }
+}

@@ -16,7 +16,29 @@
     },
     "versus": {
         "file" : "dialogue_versus",
-        "yes" : "versus",
-        "no" : "versus"
+        "yes" : "versus_y",
+        "no" : "versus_n"
+    },
+    "versus_y": {
+        "file" : "dialogue_versus_y",
+        "yes" : "versus_yy",
+        "no" : "versus_yn"
+    },
+    "versus_yy": {
+        "file" : "dialogue_versus_yy"
+    },
+    "versus_yn": {
+        "file" : "dialogue_versus_yn"
+    },
+    "versus_n": {
+        "file" : "dialogue_versus_n",
+        "yes" : "versus_ny",
+        "no" : "versus_nn"
+    },
+    "versus_ny": {
+        "file" : "dialogue_versus_ny"
+    },
+    "versus_nn": {
+        "file" : "dialogue_versus_nn"
     }
 }

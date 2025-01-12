@@ -1,0 +1,60 @@
+{
+    "start": {
+        "audioFile": "n_versus_yy_01",
+        "text": "Really?",
+        "duration":600,
+        "nextLine": "2",
+        "nextLineDelay" : 750
+    },
+    "2": {
+        "audioFile": "n_versus_yy_02",
+        "text": "Even without the player's ability to win or lose, this is still a game? ",
+        "duration": 3600,
+        "nextLine": "3",
+        "nextLineDelay" : 3800
+    },
+    "3": {
+        "audioFile": "n_versus_yy_03",
+        "text": "While it did kinda break the mechanics of the game",
+        "duration": 2500,
+        "nextLine": "4",
+        "nextLineDelay" : 2600
+    },
+    "4": {
+        "audioFile": "n_versus_yy_04",
+        "text": "I do suppose the entire genre of sandbox games",
+        "sceneAction": "freePongMovement",
+        "duration": 2650,
+        "nextLine": "5",
+        "nextLineDelay" : 2750
+    },
+    "5": {
+        "audioFile": "n_versus_yy_05",
+        "text": "are called games without having inherent goals or lose conditions",
+        "duration": 3900,
+        "nextLine": "6",
+        "nextLineDelay" : 4000
+    },
+    "6": {
+        "audioFile": "n_versus_yy_06",
+        "text": "Fair enough",
+        "duration": 700,
+        "nextLine": "7",
+        "nextLineDelay" : 800
+    },
+    "7": {
+        "audioFile": "n_versus_yy_07",
+        "text": "Then maybe, the key to defining what a game is",
+        "duration": 3000,
+        "nextLine": "8",
+        "nextLineDelay" : 3100
+    },
+    "8": {
+        "audioFile": "n_versus_yy_08",
+        "text": "is hiding somewhere else",
+        "duration": 1400,
+        "nextLine": "",
+        "sceneAction": "endOfScene",
+        "nextLineDelay" : 1800
+    }
+}

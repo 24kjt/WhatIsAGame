@@ -311,6 +311,8 @@ export class VotingScene extends Phaser.Scene {
             repeat: 0,
             onComplete: () => 
             {
+              console.log('voting scene close');
+              //this.scene.events.removeAllListeners(); 
               this.scene.stop();
             }
 

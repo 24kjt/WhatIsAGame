@@ -6,6 +6,12 @@ import test2 from '../dialogueSystem/dialogueJson/dialogue_test2';
 import test3 from '../dialogueSystem/dialogueJson/dialogue_test3';
 
 import versusNarration from '../dialogueSystem/dialogueJson/dialogue_versus'
+import versusNarration_y from '../dialogueSystem/dialogueJson/dialogue_versus_y'
+import versusNarration_yy from '../dialogueSystem/dialogueJson/dialogue_versus_yy'
+import versusNarration_yn from '../dialogueSystem/dialogueJson/dialogue_versus_yn'
+import versusNarration_n from '../dialogueSystem/dialogueJson/dialogue_versus_n'
+import versusNarration_ny from '../dialogueSystem/dialogueJson/dialogue_versus_ny'
+import versusNarration_nn from '../dialogueSystem/dialogueJson/dialogue_versus_nn'
 
 export class NarrationManager extends Phaser.Scene {
     public dialogueKey: string;
@@ -91,6 +97,8 @@ export class NarrationManager extends Phaser.Scene {
                           //  this.scene.originalScene.votedNo();
                         }
 
+                        this.scene.get('VotingScene').events.off("voted");
+
                         console.log(nextDialogue);
                         this.playDialogueSegment(nextDialogue, "start");
                     },
@@ -139,6 +147,36 @@ export class NarrationManager extends Phaser.Scene {
             case "versus":{
                 console.log('versus');
                returnValue = versusNarration;
+                break
+            }
+            case "versus_y":{
+                console.log('versus y');
+               returnValue = versusNarration_y;
+                break
+            }
+            case "versus_yy":{
+                console.log('versus yy');
+               returnValue = versusNarration_yy;
+                break
+            }
+            case "versus_yn":{
+                console.log('versus yn');
+               returnValue = versusNarration_yn;
+                break
+            }
+            case "versus_n":{
+                console.log('versus n');
+               returnValue = versusNarration_n;
+                break
+            }
+            case "versus_ny":{
+                console.log('versus ny');
+               returnValue = versusNarration_ny;
+                break
+            }
+            case "versus_nn":{
+                console.log('versus nn');
+               returnValue = versusNarration_nn;
                 break
             }
             case "test1": { 

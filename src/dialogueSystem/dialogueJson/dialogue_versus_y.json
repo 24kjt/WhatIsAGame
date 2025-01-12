@@ -1,0 +1,75 @@
+{
+    "start": {
+        "audioFile": "n_versus_y_01",
+        "text": "Interesting",
+        "duration": 1000,
+        "nextLine": "2",
+        "nextLineDelay" : 1500
+    },
+    "2": {
+        "audioFile": "n_versus_y_02",
+        "text": "So the concept of losing, or a failure state isn't what defines a game",
+        "duration": 3800,
+        "nextLine": "3",
+        "nextLineDelay" : 4000
+    },
+    "3": {
+        "audioFile": "n_versus_y_03",
+        "text": "I suppose many games in the genre of cozy games are called games without having failure states either",
+        "duration": 5000,
+        "nextLine": "4",
+        "nextLineDelay" : 5500
+    },
+    "4": {
+        "audioFile": "n_versus_y_04",
+        "text": "Then, let's try going even further",
+        "duration": 2200,
+        "nextLine": "5",
+        "nextLineDelay" : 2300
+    },
+    "5": {
+        "audioFile": "n_versus_y_05",
+        "text": "What if I removed the goal of the game?",
+        "duration": 2200,
+        "nextLine": "6",
+        "nextLineDelay" : 2300
+    },
+    "6": {
+        "audioFile": "n_versus_y_06",
+        "text": "I'll put another wall on my side this time",
+        "duration": 3500,
+        "nextLine": "7",
+        "nextLineDelay" : 3700,
+        "sceneAction": "wallOffOpponent"
+    },
+    "7": {
+        "audioFile": "n_versus_y_07",
+        "text": "Now, neither of us can score",
+        "duration": 2200,
+        "nextLine": "8",
+        "nextLineDelay" : 2500
+    },
+    "8": {
+        "audioFile": "n_versus_y_08",
+        "text": "No winning, no losing",
+        "duration": 1500,
+        "nextLine": "9",
+        "nextLineDelay" : 1800
+    },
+    "9": {
+        "audioFile": "n_versus_y_09",
+        "text": "Can't exactly say this is all that fun",
+        "duration": 2300,
+        "nextLine": "10",
+        "nextLineDelay" : 2500
+    },
+    "10": {
+        "audioFile": "n_versus_y_10",
+        "text": "But would you say this is still a game?",
+        "duration": 1600,
+        "nextLine": "",
+        "event": "vote",
+        "voteKey": "versus_noLoseNoWin",
+        "nextLineDelay" : 1800
+    }
+}

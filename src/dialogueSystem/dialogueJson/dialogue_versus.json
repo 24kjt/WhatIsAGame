@@ -11,7 +11,7 @@
         "text": "From flashy visuals to sound effects",
         "duration": 2800,
         "sceneAction": "complicatedEntry",
-
+        
         "nextLine": "3",
         "nextLineDelay" : 3000
     },

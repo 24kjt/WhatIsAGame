@@ -68,7 +68,8 @@ export class VersusGameScene extends Phaser.Scene {
         this.rightPaddle.setOrigin(0.5, 0.5);
 
         // Create ball
-        this.ball = this.add.circle(400, 300, 10, 0x1C1C1C);
+
+        this.ball = this.add.circle(640, 300, 10, 0x1C1C1C);
         this.snd_ballBounce = this.sound.add('ballBounce');
 
         //Create center line
@@ -124,6 +125,7 @@ export class VersusGameScene extends Phaser.Scene {
         this.scene.launch('NarrationManager'); // true means start immediately
         var narration = this.scene.get('NarrationManager');
         narration.scene.dialogueKey = "versus";
+        //narration.scene.dialogueKey = "versus_y";
         narration.scene.originalScene = this;
         narration.startDialogue();
 
@@ -358,6 +360,13 @@ export class VersusGameScene extends Phaser.Scene {
                 yoyo: false
             });
 
+            //sound
+            let sndClip = this.sound.add('squeak')
+            sndClip.play({
+                volume: 0.5,
+                loop: false
+            });
+            
             this.tweens.existing(tween);
 
         //set up hit ball collision
@@ -365,6 +374,17 @@ export class VersusGameScene extends Phaser.Scene {
         else
         {
             //exit animation
+            //entry animation
+            var tween = this.tweens.create({
+                targets: this.playerWall,
+                x: { from: 200, to: -50 },
+                ease: 'Cubic.InOut',
+                duration: 1500,
+                repeat: 0,
+                yoyo: false
+            });
+
+            this.tweens.existing(tween);
 
             //destroy
         }
@@ -393,7 +413,14 @@ export class VersusGameScene extends Phaser.Scene {
                     repeat: 0,
                     yoyo: false
                 });
-    
+                //sfx
+                let sndClip = this.sound.add('squeak')
+                    sndClip.play({
+                        volume: 0.5,
+                        loop: false
+                    });
+
+
                 this.tweens.existing(tween);
     
             //set up hit ball collision
@@ -434,7 +461,14 @@ export class VersusGameScene extends Phaser.Scene {
 
     FreePongMovementAxis()
     {
-        this.freeXMovement = true;
+        this.timer = this.time.addEvent({
+            delay: 1635, // milliseconds
+            callback: () => {
+                this.freeXMovement = true;
+            },
+            callbackScope: this,
+            loop: false
+        });
     }
 
     TakeAwayPlayerControl()
@@ -598,7 +632,18 @@ export class VersusGameScene extends Phaser.Scene {
         this.progressionBody = this.add.image(-500, 500-150, 'versus_progressionBody');
         this.progressionHeader = this.add.image(-500,380-150, 'versus_progressionHeader');
 
-        this.star = this.add.image(700,1500,'versus_star');
+        this.star = this.add.image(600,820,'versus_star');
+        this.star.setScale(2);
+        this.physics.add.existing(this.star);
+
+        this.star2 = this.add.image(600, 820, 'versus_star');
+        this.star2.setScale(2);
+        this.physics.add.existing(this.star2);
+
+        this.star3 = this.add.image(600, 820, 'versus_star');
+        this.star3.setScale(2);
+        this.physics.add.existing(this.star3);
+
         //add star velocity
 
         const timeline = this.add.timeline([
@@ -607,8 +652,25 @@ export class VersusGameScene extends Phaser.Scene {
                 
                 run: () => {
                     //play audio
-                    //CONTINUE HERE CONTINUE HERE CONTINUE HERE
                     //add star gravity and launch up
+
+                    let sndClip = this.sound.add('versus_stinger')
+                    sndClip.play({
+                        volume: 0.1,
+                        loop: false
+                    });
+
+                    this.star.body.setGravity(0,4500);
+                    this.star.body.setVelocity(300,-2500);
+                    this.star.body.setAngularVelocity(100);
+
+                    this.star2.body.setGravity(0,4500);
+                    this.star2.body.setVelocity(100,-2000);
+                    this.star2.body.setAngularVelocity(100);
+
+                    this.star3.body.setGravity(0,4500);
+                    this.star3.body.setVelocity(-100,-2200);
+                    this.star3.body.setAngularVelocity(100);
                 }
             },
             {
@@ -696,6 +758,9 @@ export class VersusGameScene extends Phaser.Scene {
             case "wallOffOpponent":
                 this.WallOffOpponentSide(true);
                 break;
+            case "giveBackLosing":
+                this.WallOffPlayerSide(false);
+                break;
             case "turnOpponentIntoWall":
                 this.TurnEnemyIntoWall();
                 break;
@@ -723,6 +788,9 @@ export class VersusGameScene extends Phaser.Scene {
             case "removeBG":
                 this.RemoveBG();
                 break;
+            case "endOfScene":
+                this.EndOfScene();
+                break;
             default:
                 console.log("Action not found");
                 break;
@@ -742,7 +810,21 @@ export class VersusGameScene extends Phaser.Scene {
         this.votingReaction();
     }*/
 
+    EndOfScene()
+    {
+        const timeline = this.add.timeline([
+            {
+                at: 1500,
 
+                run: () => {
+                    this.scene.start('StoryScene');
+                }
+            }
+        ]);
+
+        timeline.play();
+
+    }
 
     StartSequence()
     {

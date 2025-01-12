@@ -1,0 +1,62 @@
+{
+    "start": {
+        "audioFile": "n_versus_n_01",
+        "text": "Interesting",
+        "duration":700,
+        "nextLine": "2",
+        "nextLineDelay" : 800
+    },
+    "2": {
+        "audioFile": "n_versus_n_02",
+        "text": "So just by removing the failure state",
+        "duration": 1900,
+        "nextLine": "3",
+        "nextLineDelay" : 2000
+    },
+    "3": {
+        "audioFile": "n_versus_n_03",
+        "text": "It's no longer a game",
+        "duration": 1100,
+        "nextLine": "4",
+        "nextLineDelay" : 1200
+    },
+    "4": {
+        "audioFile": "n_versus_n_04",
+        "text": "Then, let's try the opposite",
+        "duration": 1550,
+        "nextLine": "5",
+        "nextLineDelay" : 1650
+    },
+    "5": {
+        "audioFile": "n_versus_n_05",
+        "text": "What if I gave back your ability to lose",
+        "duration": 2500,
+        "sceneAction": "giveBackLosing",
+        "nextLine": "6",
+        "nextLineDelay" : 2600
+    },
+    "6": {
+        "audioFile": "n_versus_n_06",
+        "text": "But, took away your ability to win?",
+        "duration": 1800,
+        "sceneAction": "wallOffOpponent",
+        "nextLine": "7",
+        "nextLineDelay" : 7900
+    },
+    "7": {
+        "audioFile": "n_versus_n_07",
+        "text": "A bit unfair, but it still plays",
+        "duration": 2400,
+        "nextLine": "8",
+        "nextLineDelay" : 2500
+    },
+    "8": {
+        "audioFile": "n_versus_n_08",
+        "text": "Is this a game?",
+        "duration": 750 ,
+        "nextLine": "",
+        "event": "vote",
+        "voteKey": "versus_ny",
+        "nextLineDelay" : 3800
+    }
+}

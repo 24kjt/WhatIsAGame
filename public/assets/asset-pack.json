@@ -189,7 +189,7 @@
         },
         {
             "url": [
-                "assets/sprites/versusScene/soccerBall.png"
+                "assets/sprites/versusScene/star.png"
             ],
             "type": "image",
             "key": "versus_star"
@@ -389,8 +389,319 @@
             ],
             "type": "audio",
             "key": "n_versus_21"
+        },
+        {
+            "url": [
+                "assets/audio/versus/Door-Seize-Squeak--Slow.mp3"
+            ],
+            "type": "audio",
+            "key": "squeak"
         }
     ]
+    },
+    "versus_y": {
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_01"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_02"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_03"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_04"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_05"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_06"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_07"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_08.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_08"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_09.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_09"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/y/versus_y_10.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_y_10"
+            }
+        ]
+    },
+    "versus_yy": {
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_01"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_02"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_03"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_04"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_05"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_06"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_07"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yy/versus_yy_08.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yy_08"
+            }
+        ]
+    },
+    "versus_yn": {
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yn/versus_yn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yn_01"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yn/versus_yn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yn_02"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yn/r/versus_yn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yn_03"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yn/r/versus_yn_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yn_04"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yn/r/versus_yn_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yn_05"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/yn/r/versus_yn_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_yn_06"
+            }
+        ]
+    },
+    "versus_n": {
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_01"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_02"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_03"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_04"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_05"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_06"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_07"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/n/versus_n_08.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_n_08"
+            }
+        ]
+    },
+    "versus_ny":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/ny/versus_ny_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_ny_01"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/ny/versus_ny_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_ny_02"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/ny/versus_ny_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_ny_03"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/ny/versus_ny_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_ny_04"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/ny/versus_ny_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_ny_05"
+            }
+        ]
+    },
+    "versus_nn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/nn/n_versus_nn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_nn_01"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/nn/n_versus_nn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_nn_02"
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Versus/nn/n_versus_nn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_versus_nn_03"
+            }
+        ]
     },
     "voteScene":{
         "files": [
