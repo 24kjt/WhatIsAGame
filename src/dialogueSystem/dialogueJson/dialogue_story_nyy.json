@@ -1,0 +1,32 @@
+{
+    "start": {
+        "audioFile": "n_story_nyy_01",
+        "text": "Wow, then anything in the world can be a game right?",
+        "duration": 3400,
+        "nextLine": "2",
+        "nextLineDelay" : 3600
+    },
+    "2": {
+        "audioFile": "n_story_nyy_02",
+        "text": "Movies, music, eating, cleaning, a 9-5 job",
+        "duration": 3900,        
+        "nextLine": "3",
+        "nextLineDelay" : 4100
+    },
+    "3": {
+        "audioFile": "n_story_nyy_03",
+        "text": "As long as it fits your previous definition of goal and lose condition",
+        "duration": 4400,        
+        "nextLine": "4",
+        "nextLineDelay" : 4600
+    },
+    
+    "4": {
+        "audioFile": "n_story_nyy_04",
+        "text": "But, that doesn't seem quite right, maybe there's something I still have to ask",
+        "duration": 6600,
+        "nextLine": "",
+        "nextLineDelay" : 6800,
+        "sceneAction": "endOfScene"
+    }
+}

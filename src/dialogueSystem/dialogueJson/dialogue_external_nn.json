@@ -1,0 +1,25 @@
+{
+    "start": {
+        "audioFile": "n_external_nn_01",
+        "text": "Okay okay, no gun",
+        "duration": 2100,
+        "nextLine": "2",
+        "nextLineDelay" : 2300
+    },
+    "2": {
+        "audioFile": "n_external_nn_02",
+        "text": "3",
+        "duration": 4900,        
+        "nextLine": "Now, he's not being forced to play, but it doesn't change the fact that he doesn't enjoy it",
+        "nextLineDelay" : 5100
+    },
+    "3": {
+        "audioFile": "n_external_nn_03",
+        "text": "Does this factor of voluntary participation now make it a game?",
+        "duration": 4800,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 5000,
+        "voteKey": "external_nn"
+    }
+}

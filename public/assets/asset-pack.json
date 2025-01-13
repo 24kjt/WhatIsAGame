@@ -929,6 +929,725 @@
             }
         ]
     },
+    "story_ny":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_05"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_06"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_07"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/ny/n_story_ny_08.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_ny_08"      
+            }
+        ]
+    },
+    "story_nyy":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyy/n_story_nyy_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyy_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyy/n_story_nyy_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyy_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyy/n_story_nyy_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyy_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyy/n_story_nyy_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyy_04"      
+            }
+        ]
+    },
+    "story_nyn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyn/n_story_nyn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyn_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyn/n_story_nyn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyn_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyn/n_story_nyn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyn_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyn/n_story_nyn_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyn_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyn/n_story_nyn_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyn_05"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nyn/n_story_nyn_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nyn_06"      
+            }
+        ]
+    },
+    "story_nn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nn/n_story_nn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nn_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nn/n_story_nn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nn_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nn/n_story_nn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nn_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nn/n_story_nn_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nn_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nn/n_story_nn_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nn_05"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nn/n_story_nn_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nn_06"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nn/n_story_nn_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nn_07"      
+            }
+        ]
+    },
+    "story_nny":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nny/n_story_nny_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nny_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nny/n_story_nny_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nny_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nny/n_story_nny_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nny_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nny/n_story_nny_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nny_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nny/n_story_nny_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nny_05"      
+            }
+        ]
+    },
+    "story_nnn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nnn/n_story_nnn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nnn_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nnn/n_story_nnn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nnn_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nnn/n_story_nnn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nnn_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nnn/n_story_nnn_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nnn_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/Story/nnn/n_story_nnn_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_story_nnn_05"      
+            }
+        ]
+    },
+    "external_0":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_05"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_06"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_07"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_08.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_08"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/0/n_external_09.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_09"      
+            }
+        ]
+    },
+    "external_y":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_05"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_06"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_07"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_08.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_08"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/y/n_external_y_09.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_y_09"      
+            }
+        ]
+    },
+    "external_yn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/yn/n_external_yn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yn_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yn/n_external_yn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yn_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yn/n_external_yn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yn_03"      
+            }
+        ]
+    },
+    "external_yy":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/yy/n_external_yy_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yy_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yy/n_external_yy_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yy_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yy/n_external_yy_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yy_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yy/n_external_yy_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yy_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yy/n_external_yy_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yy_05"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yy/n_external_yy_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yy_06"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yy/n_external_yy_07.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yy_07"      
+            }
+        ]
+    },
+    "external_yyn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyn_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyn_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyn_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyn_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyn_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyn_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyn_05"      
+            }
+        ]
+    },
+    "external_yyy":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyy_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyy_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyy_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyy_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyy_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyy_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/yyn/n_external_yyy_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_yyy_04"      
+            }
+        ]
+    },
+    "external_n":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/n/n_external_n_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_n_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/n/n_external_n_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_n_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/n/n_external_n_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_n_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/n/n_external_n_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_n_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/n/n_external_n_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_n_05"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/n/n_external_n_06.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_n_06"      
+            }
+        ]
+    },
+    "external_nn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/nn/n_external_nn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nn_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nn/n_external_nn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nn_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nn/n_external_nn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nn_03"      
+            }
+        ]
+    },
+    "external_nnn":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/nnn/n_external_nnn_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nnn_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nnn/n_external_nnn_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nnn_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nnn/n_external_nnn_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nnn_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nnn/n_external_nnn_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nnn_04"      
+            }
+        ]
+    },
+    "external_nny":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/nny/n_external_nny_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nny_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nny/n_external_nny_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nny_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nny/n_external_nny_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nny_03"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nny/n_external_nny_04.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nny_04"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/nny/n_external_nny_05.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_nny_05"      
+            }
+        ]
+    },
+    "external_ny":{
+        "files": [
+            {
+                "url": [
+                    "assets/audio/Narration/External/ny/n_external_ny_01.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_ny_01"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/ny/n_external_ny_02.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_ny_02"      
+            },
+            {
+                "url": [
+                    "assets/audio/Narration/External/ny/n_external_ny_03.ogg"
+                ],
+                "type": "audio",
+                "key": "n_external_ny_03"      
+            }
+        ]
+    },
     "voteScene":{
         "files": [
             {

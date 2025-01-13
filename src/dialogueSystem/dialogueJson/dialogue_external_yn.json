@@ -1,0 +1,53 @@
+{
+    "start": {
+        "audioFile": "n_external_yn_01",
+        "text": "You're right, a game is only a game only if it's enjoyed",
+        "duration": 4100,
+        "nextLine": "2",
+        "nextLineDelay" : 4300
+    },
+    "2": {
+        "audioFile": "n_external_yn_02",
+        "text": "Let's bring John back",
+        "duration": 1000,        
+        "nextLine": "3",
+        "nextLineDelay" : 1200
+    },
+    "3": {
+        "audioFile": "n_external_yn_03",
+        "text": "You're fired David, sorry",
+        "duration": 1800,
+        "nextLine": "4",
+        "nextLineDelay" : 2000
+    },
+    "4": {
+        "audioFile": "n_external_yy_04",
+        "text": "But, what if I put a cheesy plot twist here where the game wasn't a game?",
+        "duration": 5800,        
+        "nextLine": "5",
+        "nextLineDelay" : 6000
+    },
+    "5": {
+        "audioFile": "n_external_yy_05",
+        "text": "Oh, in this game, your clicks were actually buying plots of land in an auction for investment purposes",
+        "duration": 7100,        
+        "nextLine": "6",
+        "nextLineDelay" : 7300
+    },
+    "6": {
+        "audioFile": "n_external_yy_06",
+        "text": "Now that the activity has spilled out into the real world",
+        "duration": 3400,        
+        "nextLine": "7",
+        "nextLineDelay" : 3600
+    },
+    "7": {
+        "audioFile": "n_external_yy_07",
+        "text": "Is this still a game?",
+        "duration": 1100,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 1300,
+        "voteKey": "external_yn"
+    }
+}

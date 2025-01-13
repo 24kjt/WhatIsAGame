@@ -1,0 +1,25 @@
+{
+    "start": {
+        "audioFile": "n_external_0",
+        "text": "",
+        "duration": 1500,
+        "nextLine": "2",
+        "nextLineDelay" : 1700
+    },
+    "": {
+        "audioFile": "n_external_0",
+        "text": "",
+        "duration": 2000,        
+        "nextLine": "",
+        "nextLineDelay" : 2200
+    },
+    "5": {
+        "audioFile": "n_external_",
+        "text": "",
+        "duration": 1300,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 1500,
+        "voteKey": ""
+    }
+}

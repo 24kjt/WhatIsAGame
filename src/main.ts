@@ -10,7 +10,7 @@ import { StoryScene } from "./scenes/StoryScene";
 import { ShootingScene } from "./scenes/ShootingScene";
 import { ResultsScene } from "./scenes/ResultsScene";
 import { TitleScene } from "./scenes/TitleScene";
-
+import { TicTacToeScene } from "./scenes/TicTacToeScene";
 Amplify.configure(awsconfig);
 
 
@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
 			autoCenter: Phaser.Scale.Center.CENTER_BOTH,
 			parent: "game-container",
 		},
-		scene: [Boot, Preload, Level, VersusGameScene, VotingScene, NarrationManager, StoryScene, ShootingScene, ResultsScene, TitleScene]
+		scene: [Boot, Preload, Level, VersusGameScene, VotingScene,TicTacToeScene, NarrationManager, StoryScene, ShootingScene, ResultsScene, TitleScene]
 	});
 
 	game.scene.start("Boot");

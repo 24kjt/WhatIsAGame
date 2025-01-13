@@ -1,0 +1,53 @@
+{
+    "start": {
+        "audioFile": "n_story_nn_01",
+        "text": "Okay, so that level of interactivity wasn't enough?",
+        "duration": 3900,
+        "nextLine": "2",
+        "nextLineDelay" : 4100
+    },
+    "2": {
+        "audioFile": "n_story_nn_02",
+        "text": "Why would that be?",
+        "duration": 900,        
+        "nextLine": "3",
+        "nextLineDelay" : 1100
+    },
+    "3": {
+        "audioFile": "n_story_nn_03",
+        "text": "Was it because your interaction didn't have INFLUENCE on the outcome of the game?",
+        "duration": 4000,        
+        "nextLine": "4",
+        "nextLineDelay" : 4200
+    },
+    "4": {
+        "audioFile": "n_story_nn_04",
+        "text": "Okay, here, this time I'll give you two buttons",
+        "duration": 3400,        
+        "nextLine": "5",
+        "nextLineDelay" : 3600
+    },
+    "5": {
+        "audioFile": "n_story_nn_05",
+        "text": "One to shoot on the left side, one to shoot on the right side",
+        "duration": 3400,        
+        "nextLine": "6",
+        "nextLineDelay" : 3600
+    },
+    "6": {
+        "audioFile": "n_story_nn_06",
+        "text": "One button makes you win, the other button doesn't",
+        "duration": 2500,        
+        "nextLine": "7",
+        "nextLineDelay" : 2700
+    },
+    "7": {
+        "audioFile": "n_story_nn_07",
+        "text": "Is this a game?",
+        "duration": 1150,
+        "nextLine": "",
+        "nextLineDelay" : 1350,
+        "event": "vote",
+        "voteKey": "story_nn"
+    }
+}

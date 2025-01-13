@@ -1,0 +1,31 @@
+{
+    "start": {
+        "audioFile": "n_external_yyy_01",
+        "text": "I see",
+        "duration": 600,
+        "nextLine": "2",
+        "nextLineDelay" : 800
+    },
+    "2": {
+        "audioFile": "n_external_yyy_02",
+        "text": "A game isn't just limited to a fictional pastime then",
+        "duration": 3100,        
+        "nextLine": "3",
+        "nextLineDelay" : 3300
+    },
+    "3": {
+        "audioFile": "n_external_yyy_03",
+        "text": "Real world activities can be a game",
+        "duration": 2400,        
+        "nextLine": "4",
+        "nextLineDelay" : 2600
+    },
+    "4": {
+        "audioFile": "n_external_yyy_04",
+        "text": "I think with everything we've discussed today, we can come to a conclusion",
+        "duration": 3900,
+        "nextLine": "",
+        "nextLineDelay" : 4100,
+        "sceneAction": "endOfScene"
+    }
+}

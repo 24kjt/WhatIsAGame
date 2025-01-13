@@ -1,0 +1,45 @@
+{
+    "start": {
+        "audioFile": "n_story_nyn_01",
+        "text": "Okay, the interaction has to be contained inside the game",
+        "duration": 3400,
+        "nextLine": "2",
+        "nextLineDelay" : 3600
+    },
+    "2": {
+        "audioFile": "n_story_nyn_02",
+        "text": "I think that's a crucial addition to your definition",
+        "duration": 2700,        
+        "nextLine": "3",
+        "nextLineDelay" : 2900
+    },
+    "3": {
+        "audioFile": "n_story_nyn_03",
+        "text": "A game is a closed system with any type of interaction",
+        "duration": 3800,        
+        "nextLine": "4",
+        "nextLineDelay" : 4000
+    },
+    "4": {
+        "audioFile": "n_story_nyn_04",
+        "text": "But, then again, that encapsulates a lot of things",
+        "duration": 3400,        
+        "nextLine": "5",
+        "nextLineDelay" : 3600
+    },
+    "5": {
+        "audioFile": "n_story_nyn_05",
+        "text": "Like before, books, music player with a play button, a coal mine where you swing axes, they don't sound like games to me",
+        "duration": 7700,        
+        "nextLine": "6",
+        "nextLineDelay" : 7900
+    },
+    "6": {
+        "audioFile": "n_story_nyn_06",
+        "text": "Maybe I have to ask you one more thing",
+        "duration": 3000,
+        "nextLine": "",
+        "nextLineDelay" : 3000,
+        "sceneAction": "endOfScene"
+    }
+}

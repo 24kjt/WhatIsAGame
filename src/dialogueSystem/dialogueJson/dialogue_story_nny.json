@@ -1,0 +1,38 @@
+{
+    "start": {
+        "audioFile": "n_story_nny_01",
+        "text": "I see, so it was whether your interaction had influence on the game was the key factor",
+        "duration": 5500,
+        "nextLine": "2",
+        "nextLineDelay" : 5700
+    },
+    "2": {
+        "audioFile": "n_story_nny_02",
+        "text": "But, then again, isn't that true for most human activities?",
+        "duration": 4000,        
+        "nextLine": "3",
+        "nextLineDelay" : 4200
+    },
+    "3": {
+        "audioFile": "n_story_nny_03",
+        "text": "In addition to your previous definition, things like driving, ordering food, or even a 9-5 job can be a game",
+        "duration": 7500,        
+        "nextLine": "4",
+        "nextLineDelay" : 7700
+    },
+    "4": {
+        "audioFile": "n_story_nny_04",
+        "text": "But, that doesn't sound right",
+        "duration": 1750,        
+        "nextLine": "5",
+        "nextLineDelay" : 1950
+    },
+    "5": {
+        "audioFile": "n_story_nny_05",
+        "text": "Maybe there's another factor to consider, outside of the game",
+        "duration": 4100,
+        "nextLine": "",
+        "nextLineDelay" : 4300,
+        "sceneAction" : "endOfScene"
+    }
+}

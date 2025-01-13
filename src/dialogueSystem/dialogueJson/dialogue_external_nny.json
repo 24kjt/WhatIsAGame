@@ -1,0 +1,39 @@
+{
+    "start": {
+        "audioFile": "n_external_nny_01",
+        "text": "I see",
+        "duration": 600,
+        "nextLine": "2",
+        "nextLineDelay" : 800
+    },
+    "2": {
+        "audioFile": "n_external_nny_02",
+        "text": "So a game is an activity that doesn't have to be enjoyed",
+        "duration": 3200,        
+        "nextLine": "3",
+        "nextLineDelay" : 3400
+    },
+    "3": {
+        "audioFile": "n_external_nny_03",
+        "text": "But still needs to be participated voluntarily",
+        "duration": 2600,        
+        "nextLine": "4",
+        "nextLineDelay" : 2800
+    },
+    "4": {
+        "audioFile": "n_external_nny_04",
+        "text": "It's interesting that the same activity can be a game or not completely depending on the participant",
+        "duration": 4600,        
+        "nextLine": "5",
+        "nextLineDelay" : 4800
+    },
+    "5": {
+        "audioFile": "n_external_nny_05",
+        "text": "I think with what we've discussed today, we can come to a conclusion",
+        "duration": 3200,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 1500,
+        "voteKey": "external_nny"
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "start": {
+        "audioFile": "n_external_yy_01",
+        "text": "So the player doesn't necessarily have to enjoy the game they're playing",
+        "duration": 3600,
+        "nextLine": "2",
+        "nextLineDelay" : 3800
+    },
+    "2": {
+        "audioFile": "n_external_yy_02",
+        "text": "Fair enough, there are times when even we don't enjoy the games we're playing",
+        "duration": 4800,        
+        "nextLine": "3",
+        "nextLineDelay" : 5000
+    },
+    "3": {
+        "audioFile": "n_external_yy_03",
+        "text": "So a game is still a game, and it doesn't have to be enjoyed, and it can be played for monetary gain",
+        "duration": 5100,        
+        "nextLine": "4",
+        "nextLineDelay" : 5300
+    },
+    "4": {
+        "audioFile": "n_external_yy_04",
+        "text": "But, what if I put a cheesy plot twist here where the game wasn't a game?",
+        "duration": 5800,        
+        "nextLine": "5",
+        "nextLineDelay" : 6000
+    },
+    "5": {
+        "audioFile": "n_external_yy_05",
+        "text": "Oh, in this game, your clicks were actually buying plots of land in an auction for investment purposes",
+        "duration": 7100,        
+        "nextLine": "6",
+        "nextLineDelay" : 7300
+    },
+    "6": {
+        "audioFile": "n_external_yy_06",
+        "text": "Now that the activity has spilled out into the real world",
+        "duration": 3400,        
+        "nextLine": "7",
+        "nextLineDelay" : 3600
+    },
+    "7": {
+        "audioFile": "n_external_yy_07",
+        "text": "Is this still a game?",
+        "duration": 1100,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 1300,
+        "voteKey": "external_yy"
+    }
+}

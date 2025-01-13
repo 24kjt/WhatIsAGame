@@ -1,0 +1,46 @@
+{
+    "start": {
+        "audioFile": "n_external_n_01",
+        "text": "I suppose when you make money from a game, it's no longer a game, it's a job",
+        "duration": 4000,
+        "nextLine": "2",
+        "nextLineDelay" : 4200
+    },
+    "2": {
+        "audioFile": "n_external_n_02",
+        "text": "I know there are people who enjoy their job, but I also wouldn't call that a game",
+        "duration": 3500,        
+        "nextLine": "3",
+        "nextLineDelay" : 3700
+    },
+    "3": {
+        "audioFile": "n_external_n_03",
+        "text": "So, here's Michael",
+        "duration": 1700,        
+        "nextLine": "4",
+        "nextLineDelay" : 1900
+    },
+    "4": {
+        "audioFile": "n_external_n_04",
+        "text": "Michael isn't paid to play this game, but he also doesn't enjoy the game",
+        "duration": 3900,        
+        "nextLine": "5",
+        "nextLineDelay" : 4100
+    },
+    "5": {
+        "audioFile": "n_external_n_05",
+        "text": "In fact, he's being held at gunpoint to play with you",
+        "duration": 2600,        
+        "nextLine": "6",
+        "nextLineDelay" : 2800
+    },
+    "6": {
+        "audioFile": "n_external_n_06",
+        "text": "Is this a game for Michael?",
+        "duration": 2200,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 2400,
+        "voteKey": "external_n"
+    }
+}

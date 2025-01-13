@@ -1,0 +1,67 @@
+{
+    "start": {
+        "audioFile": "n_external_y_01",
+        "text": "Fair point!",
+        "duration": 1000,
+        "nextLine": "2",
+        "nextLineDelay" : 1200
+    },
+    "2": {
+        "audioFile": "n_external_y_02",
+        "text": "I guess if you still love playing it, it's still a game even if you're being paid for it",
+        "duration": 5000,        
+        "nextLine": "3",
+        "nextLineDelay" : 5200
+    },
+    "3": {
+        "audioFile": "n_external_y_03",
+        "text": "Thank you John",
+        "duration": 800,        
+        "nextLine": "4",
+        "nextLineDelay" : 1000
+    },
+    "4": {
+        "audioFile": "n_external_y_04",
+        "text": "But, what about David?",
+        "duration": 2000,        
+        "nextLine": "5",
+        "nextLineDelay" : 2200
+    },
+    "5": {
+        "audioFile": "n_external_y_05",
+        "text": "David is a second person we hired today to be your playmate",
+        "duration": 3400,        
+        "nextLine": "6",
+        "nextLineDelay" : 3600
+    },
+    "6": {
+        "audioFile": "n_external_y_06",
+        "text": "But, unlike John, David isn't so eagar to play",
+        "duration": 3500,        
+        "nextLine": "7",
+        "nextLineDelay" : 3700
+    },
+    "7": {
+        "audioFile": "n_external_y_07",
+        "text": "He's willing but every second he's playing with you, he rather be doing something like relaxing at home",
+        "duration": 6000,        
+        "nextLine": "8",
+        "nextLineDelay" : 6200
+    },
+    "8": {
+        "audioFile": "n_external_y_08",
+        "text": "Not as enthusiastic as John, but does that make a difference?",
+        "duration": 4000,        
+        "nextLine": "9",
+        "nextLineDelay" : 2200
+    },
+    "9": {
+        "audioFile": "n_external_y_09",
+        "text": "Is this, the same game, a game for David?",
+        "duration": 3400,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 3600,
+        "voteKey": "external_y"
+    }
+}

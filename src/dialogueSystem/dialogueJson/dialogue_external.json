@@ -1,0 +1,67 @@
+{
+    "start": {
+        "audioFile": "n_external_01",
+        "text": "Here's a game, tic-tac-toe and you win",
+        "duration": 2100,
+        "nextLine": "2",
+        "nextLineDelay" : 2300
+    },
+    "2": {
+        "audioFile": "n_external_02",
+        "text": "Before, I asked YOU about what you think based on changes made inside the game",
+        "duration": 5500,        
+        "nextLine": "3",
+        "nextLineDelay" : 5700
+    },
+    "3": {
+        "audioFile": "n_external_03",
+        "text": "But, this time, we're going to flip that on its head",
+        "duration": 2700,        
+        "nextLine": "4",
+        "nextLineDelay" : 2900
+    },
+    "4": {
+        "audioFile": "n_external_04",
+        "text": "Here's your opponent for the game, John",
+        "duration": 2400,        
+        "nextLine": "5",
+        "nextLineDelay" : 2600
+    },
+    "5": {
+        "audioFile": "n_external_05",
+        "text": "John LOVES this game, he plays it all the time",
+        "duration": 3500,        
+        "nextLine": "6",
+        "nextLineDelay" : 3700
+    },
+    "6": {
+        "audioFile": "n_external_06",
+        "text": "Because he loves the game so much, we hired him with $20 to play with you for this session",
+        "duration": 5400,        
+        "nextLine": "7",
+        "nextLineDelay" : 5600
+    },
+    "7": {
+        "audioFile": "n_external_07",
+        "text": "This may be a game for you",
+        "duration": 1750,        
+        "nextLine": "8",
+        "nextLineDelay" : 1950
+    },
+    "8": {
+        "audioFile": "n_external_08",
+        "text": "But now that John's working for money",
+        "duration": 2000,        
+        "nextLine": "9",
+        "nextLineDelay" : 2200
+    },
+    "9": {
+        "audioFile": "n_external_09",
+        "text": "Is this a game for John?",
+        "duration": 1700,
+        "event": "vote",
+        "nextLine": "",
+        "nextLineDelay" : 1900,
+        "voteKey": "external_0"
+    }
+}

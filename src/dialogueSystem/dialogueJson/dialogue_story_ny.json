@@ -1,0 +1,60 @@
+{
+    "start": {
+        "audioFile": "n_story_ny_01",
+        "text": "So, any semblence of interaction seems to be enough for something to count as a game",
+        "duration": 4400,
+        "nextLine": "2",
+        "nextLineDelay" : 4600
+    },
+    "2": {
+        "audioFile": "n_story_ny_02",
+        "text": "Then, let's try pushing that to the limit",
+        "duration": 2500,        
+        "nextLine": "3",
+        "nextLineDelay" : 2700
+    },
+    "3": {
+        "audioFile": "n_story_ny_03",
+        "text": "Let's take away that continue button, but move the interaction one step back",
+        "duration": 6000,        
+        "nextLine": "4",
+        "nextLineDelay" : 6200
+    },
+    "4": {
+        "audioFile": "n_story_ny_04",
+        "text": "Before you came to this website, your computer was turned off",
+        "duration": 3100,        
+        "nextLine": "5",
+        "nextLineDelay" : 3300
+    },
+    "5": {
+        "audioFile": "n_story_ny_05",
+        "text": "To get to see this automatic sequence of images play, you had to interact with a chair to sit down",
+        "duration": 6000,        
+        "nextLine": "6",
+        "nextLineDelay" : 6200
+    },
+    "6": {
+        "audioFile": "n_story_ny_06",
+        "text": "Interact with the power button to turn the computer on",
+        "duration": 2200,        
+        "nextLine": "7",
+        "nextLineDelay" : 2400
+    },
+    "7": {
+        "audioFile": "n_story_ny_07",
+        "text": "And, interact with the browser to come to this website",
+        "duration": 2200,        
+        "nextLine": "8",
+        "nextLineDelay" : 2400
+    },
+    "8": {
+        "audioFile": "n_story_ny_08",
+        "text": "Was that a game?",
+        "duration": 1150,
+        "nextLine": "",
+        "nextLineDelay" : 1350,
+        "event": "vote",
+        "voteKey": "story_ny"
+    }
+}

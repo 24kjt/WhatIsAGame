@@ -51,11 +51,78 @@
     },
     "story_y": {
         "file": "dialogue_story_y"
-    }
-    ,
+    },
     "story_n": {
         "file": "dialogue_story_n",
         "yes": "story_ny",
         "no": "story_nn"
+    },
+    "story_ny": {
+        "file": "dialogue_story_ny",
+        "yes": "story_nyy",
+        "no": "story_nyn"
+    },
+    "story_nyy": {
+        "file": "dialogue_story_nyy"
+    },
+    "story_nyn": {
+        "file": "dialogue_story_nyn"
+    },
+    "story_nn": {
+        "file": "dialogue_story_nn",
+        "yes": "story_nny",
+        "no": "story_nnn"
+    },
+    "story_nny": {
+        "file": "dialogue_story_nny"
+    },
+    "story_nnn": {
+        "file": "dialogue_story_nnn"
+    },
+    "external": {
+        "file": "dialogue_external",
+        "yes": "external_y",
+        "no": "external_n"
+    },
+    "external_y": {
+        "file": "dialogue_external_y"
+    },
+    "external_yy": {
+        "file": "dialogue_external_yy",
+        "yes": "external_yyy",
+        "no": "external_yyn"
+    },
+    "external_yn": {
+        "file": "dialogue_external_yn",
+        "yes": "external_yyy",
+        "no": "external_yyn"
+    },
+    "external_yyy": {
+        "file": "dialogue_external_yyy"
+    },
+    "external_yyn": {
+        "file": "dialogue_external_yyn"
+    },
+    "external_n": {
+        "file": "dialogue_external_n",
+        "yes": "external_ny",
+        "no": "external_nn"
+    },
+    "external_ny": {
+        "file": "dialogue_external_ny",
+        "yes": "external_nyy",
+        "no": "external_nyn"
+    },
+    "external_nn": {
+        "file": "dialogue_external_nn",
+        "yes": "external_nny",
+        "no": "external_nnn"
+    },
+    "external_nny": {
+        "file": "dialogue_external_nny"
+    },
+    "external_nnn": {
+        "file": "dialogue_external_nnn"
     }
+
 }

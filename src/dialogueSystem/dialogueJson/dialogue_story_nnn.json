@@ -1,0 +1,38 @@
+{
+    "start": {
+        "audioFile": "n_story_nnn_01",
+        "text": "Alright, so it's not whether your interaction simply has impact on the game",
+        "duration": 4900,
+        "nextLine": "2",
+        "nextLineDelay" : 5100
+    },
+    "2": {
+        "audioFile": "n_story_nnn_02",
+        "text": "What else could it be?",
+        "duration": 1100,        
+        "nextLine": "3",
+        "nextLineDelay" : 1300
+    },
+    "3": {
+        "audioFile": "n_story_nnn_03",
+        "text": "Choice, intention, randomness?",
+        "duration": 2600,        
+        "nextLine": "4",
+        "nextLineDelay" : 2800
+    },
+    "4": {
+        "audioFile": "n_story_nnn_04",
+        "text": "For now, let's look somewhere else for your definition",
+        "duration": 3600,        
+        "nextLine": "5",
+        "nextLineDelay" : 3800
+    },
+    "5": {
+        "audioFile": "n_story_nnn_05",
+        "text": "Somewhere, outside of the game",
+        "duration": 2500,
+        "nextLine": "",
+        "nextLineDelay" : 2700,
+        "sceneAction" : "endOfScene"
+    }
+}

@@ -19,6 +19,23 @@ import versusNarration_nn from '../dialogueSystem/dialogueJson/dialogue_versus_n
 import storyNarration from '../dialogueSystem/dialogueJson/dialogue_story'
 import storyNarration_y from '../dialogueSystem/dialogueJson/dialogue_story_y'
 import storyNarration_n from '../dialogueSystem/dialogueJson/dialogue_story_n'
+import storyNarration_ny from '../dialogueSystem/dialogueJson/dialogue_story_ny'
+import storyNarration_nyy from '../dialogueSystem/dialogueJson/dialogue_story_nyy'
+import storyNarration_nyn from '../dialogueSystem/dialogueJson/dialogue_story_nyn'
+import storyNarration_nn from '../dialogueSystem/dialogueJson/dialogue_story_nn'
+import storyNarration_nny from '../dialogueSystem/dialogueJson/dialogue_story_nny'
+import storyNarration_nnn from '../dialogueSystem/dialogueJson/dialogue_story_nnn'
+
+import externalNarration from '../dialogueSystem/dialogueJson/dialogue_external'
+import externalNarration_y from '../dialogueSystem/dialogueJson/dialogue_external_y'
+import externalNarration_yy from '../dialogueSystem/dialogueJson/dialogue_external_yy'
+import externalNarration_yyy from '../dialogueSystem/dialogueJson/dialogue_external_yyy'
+import externalNarration_yyn from '../dialogueSystem/dialogueJson/dialogue_external_yyn'
+import externalNarration_yn from '../dialogueSystem/dialogueJson/dialogue_external_yn'
+import externalNarration_n from '../dialogueSystem/dialogueJson/dialogue_external_n'
+import externalNarration_ny from '../dialogueSystem/dialogueJson/dialogue_external_ny'
+import externalNarration_nn from '../dialogueSystem/dialogueJson/dialogue_external_nn'
+import externalNarration_nny from '../dialogueSystem/dialogueJson/dialogue_external_nnn'
 
 
 export class NarrationManager extends Phaser.Scene {
@@ -205,6 +222,91 @@ export class NarrationManager extends Phaser.Scene {
             case "story_n":{
                 console.log('story_n');
                returnValue = storyNarration_n;
+                break
+            }
+            case "story_ny":{
+                console.log('story_ny');
+               returnValue = storyNarration_ny;
+                break
+            }
+            case "story_nyy":{
+                console.log('story_nyy');
+               returnValue = storyNarration_nyy;
+                break
+            }
+            case "story_nyn":{
+                console.log('story_nyn');
+               returnValue = storyNarration_nyn;
+                break
+            }
+            case "story_nn":{
+                console.log('story_nn');
+               returnValue = storyNarration_nn;
+                break
+            }
+            case "story_nny":{
+                console.log('story_nny');
+               returnValue = storyNarration_nny;
+                break
+            }
+            case "story_nnn":{
+                console.log('story_nny');
+               returnValue = storyNarration_nnn;
+                break
+            }
+            case "external":{
+                console.log('external');
+               returnValue = externalNarration;
+                break
+            }
+            case "external_y":{
+                console.log('external_');
+               returnValue = externalNarration_y;
+                break
+            }
+            case "external_yy":{
+                console.log('external_');
+               returnValue = externalNarration_yy;
+                break
+            }
+            case "external_yyy":{
+                console.log('external_');
+               returnValue = externalNarration_yyy;
+                break
+            }
+            case "external_yyn":{
+                console.log('external_');
+               returnValue = externalNarration_yyn;
+                break
+            }
+            case "external_yn":{
+                console.log('external_');
+               returnValue = externalNarration_yn;
+                break
+            }
+            case "external_n":{
+                console.log('external_n');
+               returnValue = externalNarration_n;
+                break
+            }
+            case "external_ny":{
+                console.log('external_ny');
+               returnValue = externalNarration_ny;
+                break
+            }
+            case "external_nn":{
+                console.log('external_nn');
+               returnValue = externalNarration_nn;
+                break
+            }
+            case "external_nnn":{
+                console.log('external_nnn');
+               returnValue = externalNarration_nnn;
+                break
+            }
+            case "external_nny":{
+                console.log('external_nny');
+               returnValue = externalNarration_nny;
                 break
             }
             case "test1": { 
