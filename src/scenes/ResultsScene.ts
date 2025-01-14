@@ -15,7 +15,7 @@ export class ResultsScene extends Phaser.Scene {
 
         this.recorder = this.scene.get("RecorderScene")
         this.text = [];
-        this.text[0] = this.add.text(width/2, 100, "Your Defition Says A Game Is An Activitiy...", { fontSize: '42px', color: '#1C1C1C' });
+        this.text[0] = this.add.text(width/2, 100, "Your Definition Says A Game Is An Activitiy...", { fontSize: '42px', color: '#1C1C1C' });
         this.text[0].setAlign("center").setOrigin(0.5);
 
         this.CompileResults();
