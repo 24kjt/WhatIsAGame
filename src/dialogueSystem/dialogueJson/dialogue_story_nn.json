@@ -32,14 +32,17 @@
         "text": "One to shoot on the left side, one to shoot on the right side",
         "duration": 3400,        
         "nextLine": "6",
-        "nextLineDelay" : 3600
+        "nextLineDelay" : 3600,
+        "sceneAction": "bringLeftButton"
     },
     "6": {
         "audioFile": "n_story_nn_06",
         "text": "One button makes you win, the other button doesn't",
         "duration": 2500,        
         "nextLine": "7",
-        "nextLineDelay" : 2700
+        "nextLineDelay" : 2700,
+        "sceneAction": "bringRightButton",
+        "awaitInput2": true
     },
     "7": {
         "audioFile": "n_story_nn_07",

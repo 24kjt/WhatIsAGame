@@ -49,6 +49,7 @@ export class NarrationManager extends Phaser.Scene {
 
     create() {
         this.scene.bringToTop();
+        this.dialogueWaiting = false;
     }
 
     startDialogue()
@@ -71,6 +72,23 @@ export class NarrationManager extends Phaser.Scene {
         }
     }
     
+    saveDialogue(dialogueKey, next)
+    {
+        this.saveDialogueKey = dialogueKey;
+        this.nextData = next;
+
+        this.dialogueWaiting = true;
+
+    }
+
+    continueDialogue()
+    {
+        if(this.dialogueWaiting)
+        {
+            this.dialogueWaiting = false;
+            this.playDialogueSegment(this.saveDialogueKey, this.nextData);
+        }
+    }
 
     playDialogueSegment(dialogueKey, dialogueID) {
 
@@ -86,23 +104,38 @@ export class NarrationManager extends Phaser.Scene {
 
         if(data.nextLine != "")
         {
-            this.timer = this.time.addEvent({
-                delay: data.nextLineDelay, // milliseconds
-                callback: () => this.playDialogueSegment(dialogueKey, data.nextLine) ,
-                callbackScope: this,
-                loop: false
-            });
+            if(data.hasOwnProperty('awaitInput') || data.hasOwnProperty('awaitInput2'))
+            {
+                if(data.hasOwnProperty('awaitInput'))
+                {
+                    this.scene.originalScene.BringContinueButton();
+                }
+                this.saveDialogue(dialogueKey, data.nextLine)
+            }
+            else
+            {
+                this.timer = this.time.addEvent({
+                    delay: data.nextLineDelay, // milliseconds
+                    callback: () => this.playDialogueSegment(dialogueKey, data.nextLine) ,
+                    callbackScope: this,
+                    loop: false
+                });
+            }
         }
         else
         {//play callback to get attention from voting scene
             if(data.event == "vote")
             {
+                console.log("vote call activated")
                 this.scene.launch('VotingScene'); // true means start immediately
                 var voteScene = this.scene.get('VotingScene');
                 voteScene.scene.voteKey = data.voteKey;
                 var nextDialogue = ""; //string key for next dialogue
                 //attach event listener to voteYes and voteNo
                 
+                voteScene.scene.bringToTop();
+                this.scene.bringToTop();
+
                 this.scene.get('VotingScene').events.on("voted",
                     () => {
                         var yes = voteScene.GetVoteResults();

@@ -1453,28 +1453,28 @@
         "files": [
             {
                 "url": [
-                    "assets/audio/Narration/External/yyn/n_external_yyy_01.ogg"
+                    "assets/audio/Narration/External/yyy/n_external_yyy_01.ogg"
                 ],
                 "type": "audio",
                 "key": "n_external_yyy_01"      
             },
             {
                 "url": [
-                    "assets/audio/Narration/External/yyn/n_external_yyy_02.ogg"
+                    "assets/audio/Narration/External/yyy/n_external_yyy_02.ogg"
                 ],
                 "type": "audio",
                 "key": "n_external_yyy_02"      
             },
             {
                 "url": [
-                    "assets/audio/Narration/External/yyn/n_external_yyy_03.ogg"
+                    "assets/audio/Narration/External/yyy/n_external_yyy_03.ogg"
                 ],
                 "type": "audio",
                 "key": "n_external_yyy_03"      
             },
             {
                 "url": [
-                    "assets/audio/Narration/External/yyn/n_external_yyy_04.ogg"
+                    "assets/audio/Narration/External/yyy/n_external_yyy_04.ogg"
                 ],
                 "type": "audio",
                 "key": "n_external_yyy_04"      
@@ -1648,6 +1648,168 @@
             }
         ]
     },
+    "story_images":{
+        "files": [
+            {
+                "url": [
+                    "assets/sprites/storyScene/1.png"
+                ],
+                "type": "image",
+                "key": "story_cutscene_1"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/2.png"
+                ],
+                "type": "image",
+                "key": "story_cutscene_2"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/3.png"
+                ],
+                "type": "image",
+                "key": "story_cutscene_3"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/4.png"
+                ],
+                "type": "image",
+                "key": "story_cutscene_4"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/5_lose.png"
+                ],
+                "type": "image",
+                "key": "story_cutscene_5_lose"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/5_win.png"
+                ],
+                "type": "image",
+                "key": "story_cutscene_5_win"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/button_continue.png"
+                ],
+                "type": "image",
+                "key": "story_button_continue"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/button_left.png"
+                ],
+                "type": "image",
+                "key": "story_button_left"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/button_right.png"
+                ],
+                "type": "image",
+                "key": "story_button_right"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/door.png"
+                ],
+                "type": "image",
+                "key": "story_object_door"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/chair.png"
+                ],
+                "type": "image",
+                "key": "story_object_chair"            
+            },
+            {
+                "url": [
+                    "assets/sprites/storyScene/computer.png"
+                ],
+                "type": "image",
+                "key": "story_object_computer"            
+            }
+            ]
+        },
+        "story_images":{
+            "files": [
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/grid.png"
+                    ],
+                    "type": "image",
+                    "key": "tic_grid"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/o.png"
+                    ],
+                    "type": "image",
+                    "key": "tic_o"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/x.png"
+                    ],
+                    "type": "image",
+                    "key": "tic_x"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/ui_david.png"
+                    ],
+                    "type": "image",
+                    "key": "ui_david"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/ui_john.png"
+                    ],
+                    "type": "image",
+                    "key": "ui_john"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/ui_michael.png"
+                    ],
+                    "type": "image",
+                    "key": "ui_michael"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/ui_you.png"
+                    ],
+                    "type": "image",
+                    "key": "ui_you"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/ui_yourTurn.png"
+                    ],
+                    "type": "image",
+                    "key": "ui_yourTurn"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/ui_lose.png"
+                    ],
+                    "type": "image",
+                    "key": "ui_lose"            
+                },
+                {
+                    "url": [
+                        "assets/sprites/tictactoe/ui_win.png"
+                    ],
+                    "type": "image",
+                    "key": "ui_win"            
+                }
+            ]
+        },
     "voteScene":{
         "files": [
             {

@@ -16,7 +16,8 @@
     "3": {
         "audioFile": "n_story_ny_03",
         "text": "Let's take away that continue button, but move the interaction one step back",
-        "duration": 6000,        
+        "duration": 6000,     
+        "sceneAction": "dropContinue",   
         "nextLine": "4",
         "nextLineDelay" : 6200
     },

@@ -817,6 +817,7 @@ export class VersusGameScene extends Phaser.Scene {
                 at: 1500,
 
                 run: () => {
+                    this.scene.get('NarrationManager').scene.stop();
                     this.scene.start('StoryScene');
                 }
             }

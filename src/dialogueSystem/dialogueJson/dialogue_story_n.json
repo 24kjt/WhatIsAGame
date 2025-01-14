@@ -24,9 +24,49 @@
         "audioFile": "n_story_n_04",
         "text": "So here, here's the interactivity to make it a game",
         "duration": 4200,        
-        "nextLine": "5",
+        "nextLine": "s1",
         "nextLineDelay" : 4400
     },
+    
+
+    "s1": {
+        "audioFile": "n_story_01",
+        "text": "Good evening, detective...",
+        "sceneAction": "showCutscene1",
+        "duration": 1500,
+        "nextLine": "s2",
+        "nextLineDelay" : 1700,
+        "awaitInput" :true
+    },
+    "s2": {
+        "audioFile": "n_story_02",
+        "text": "I see you found my hideout!",
+        "sceneAction": "showCutscene2",
+        "duration": 2000,        
+        "nextLine": "s3",
+        "nextLineDelay" : 2200,
+        "awaitInput" :true
+    },
+    "s3": {
+        "audioFile": "n_story_03",
+        "text": "Well, I admire your efforts, but they have been in vain",
+        "sceneAction": "showCutscene3",
+        "duration": 4100,        
+        "nextLine": "s4",
+        "nextLineDelay" : 4300,
+        "awaitInput" :true
+    },
+    "s4": {
+        "audioFile": "n_story_04",
+        "text": "Goodbye detective!",
+        "sceneAction": "showCutscene4",
+        "duration": 1300,        
+        "nextLine": "5",
+        "nextLineDelay" : 1500,
+        "awaitInput" :true
+    },
+
+
     "5": {
         "audioFile": "n_story_n_05",
         "text": "Is this now a game?",

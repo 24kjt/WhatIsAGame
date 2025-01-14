@@ -1,7 +1,7 @@
 {
     "start": {
         "audioFile": "n_story_y_01",
-        "text": "Realy?",
+        "text": "Really?",
         "duration": 500,
         "nextLine": "2",
         "nextLineDelay" : 700
@@ -46,7 +46,7 @@
         "text": "Maybe we need to look, a bit outside of the game",
         "duration": 3700,
         "nextLine": "",
-        "nextLineDelay" : 1500,
+        "nextLineDelay" : 4000,
         "sceneAction" : "endOfScene"
     }
 }

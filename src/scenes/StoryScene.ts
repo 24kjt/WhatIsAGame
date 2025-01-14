@@ -42,16 +42,30 @@ export class StoryScene extends Phaser.Scene {
         console.log('width' + width);
         console.log('height' + height);
         
-        
-        this.cutsceneImage = this.add.image(width/2, height*1/4, '');
-        
+        this.backgroundPaper = this.add.image(0,0, 'paperBG');
+        this.cutsceneImage = this.add.image(width/2-245, height*1.5/4-500+177, '');
+
+        var entryTween = this.tweens.create({
+            targets: this.cutsceneImage,
+            y: '+= 500',
+            ease: 'Quad.easeInOut',
+            duration: 1000,
+            repeat: 0,
+            yoyo: false
+          });
+      
+          this.tweens.existing(entryTween);
+
+        this.cutsceneIndex = 1;
         //this.add.image(0, 0, 'Cutscene_test2');
         //dialogue
 
         //dialogue options
         
-        this.dialogueText = this.add.text(width/2, height*3/4, "", this.style).setOrigin(0.5, 0);
+       // this.dialogueText = this.add.text(width/2, height*3/4, "", this.style).setOrigin(0.5, 0);
         
+
+       /*
         if(this.modeStartButton)
         {
             this.SetStartButton(true, "playerAlwaysWins");
@@ -63,9 +77,10 @@ export class StoryScene extends Phaser.Scene {
         
         console.log( storyDialogue);
         console.log( storyDialogue['playerAlwaysWins']);
+        */
         this.showingChoices = false;
 
-        this.SetHonkButton(this.modeHonkButton);
+        //this.SetHonkButton(this.modeHonkButton);
 
         //start narration
         this.scene.launch('NarrationManager'); // true means start immediately
@@ -83,7 +98,7 @@ export class StoryScene extends Phaser.Scene {
         {
             if(!this.pointerWasDown && !this.modeAutoPlay)
             {
-                this.ProgressDialogue();
+                //this.ProgressDialogue();
             }
 
             this.pointerWasDown = true;
@@ -108,6 +123,13 @@ export class StoryScene extends Phaser.Scene {
 
     ProgressDialogue()
     {
+        //this.cutsceneIndex += 1;
+        var narration = this.scene.get('NarrationManager');
+
+        narration.continueDialogue();
+        //this.ShowCutscene(this.cutsceneIndex );
+
+        /*
         if(this.storyJson.hasOwnProperty(String(this.dialogueIndex +1)))
         {
             console.log("next dialogue");
@@ -120,6 +142,7 @@ export class StoryScene extends Phaser.Scene {
         }
 
         this.LoadDialogue(); 
+        */
     }
 
     LoadDialogue()
@@ -254,4 +277,244 @@ export class StoryScene extends Phaser.Scene {
             return false;
         }
     }
+
+
+    PlaySceneAction(actionKey)
+    {
+        switch(actionKey)
+        {
+            case "progressDialogue":
+                this.ProgressDialogue();
+                break;
+            case "showCutscene1":
+                this.ShowCutscene(1);
+                 break
+            case "showCutscene2":
+                this.ShowCutscene(2);
+                break
+            case "showCutscene3":
+                this.ShowCutscene(3);
+                break
+            case "showCutscene4":
+                this.ShowCutscene(4);
+                break
+            case "showCutscene5":
+                this.ShowCutscene(5);
+                break
+            case "showCutscene6":
+                this.ShowCutscene(6);
+                break    
+            case "endOfScene":
+                this.EndOfScene();
+                break   
+            case "dropContinue":
+                this.IsAnythingAGame()
+                break  
+            case "bringLeftButton":
+                this.BringLeftButton()
+                break  
+            case "bringRightButton":
+                this.BringRightButton()
+                break  
+        }
+    }
+
+    BringLeftButton()
+    {
+        this.continueButton.destroy();
+
+        let { width, height } = this.sys.game.canvas;
+
+        this.leftButton = this.add.image(width/4,3*height/4, 'story_button_left')
+
+        this.leftButton.setTint(0x000000);
+
+
+
+    }
+
+    BringRightButton()
+    {
+        let { width, height } = this.sys.game.canvas;
+
+
+        this.leftButton.setInteractive();
+        this.leftButton.on('pointerdown', () =>
+        {
+            this.RandomOutcome();
+        });
+
+        this.leftButton.on('pointerover', () => {
+            this.leftButton.setTint(0x2C2C2C);
+
+        });
+        this.leftButton.on('pointerout', () => 
+        {
+            this.leftButton.setTint(0x000000);
+        });
+
+
+        this.rightButton = this.add.image(3*width/4,3*height/4, 'story_button_right')
+
+        this.rightButton.setTint(0x000000);
+
+        this.rightButton.setInteractive();
+        this.rightButton.on('pointerdown', () =>
+        {
+            this.RandomOutcome();
+        });
+
+        this.rightButton.on('pointerover', () => {
+            this.rightButton.setTint(0x2C2C2C);
+
+        });
+        this.rightButton.on('pointerout', () => 
+        {
+            this.rightButton.setTint(0x000000);
+        });
+    }
+
+    RandomOutcome()
+    {
+        var value = Phaser.Math.Between(5, 6);
+
+        this.leftButton.destroy();
+        this.rightButton.destroy();
+
+        this.ShowCutscene(value);
+        this.ProgressDialogue();
+    }
+
+    EndOfScene()
+    {
+        const timeline = this.add.timeline([
+            {
+                at: 4000,
+
+                run: () => {
+                    this.scene.get('NarrationManager').scene.stop();
+                    this.scene.start('TicTacToeScene');
+                }
+            }
+        ]);
+
+        timeline.play();
+    }
+
+    ShowCutscene(number)
+    {
+        this.cutsceneIndex = number;
+
+        this.cutsceneImage.setOrigin(0,1)
+        var entryTween = this.tweens.create({
+            targets: this.cutsceneImage,
+            angle:  -10,
+            ease: 'Quad.easeInOut',
+            duration: 100,
+            repeat: 0,
+            yoyo: true
+          });
+      
+          this.tweens.existing(entryTween);
+
+
+        switch(number)
+        {
+            case 1:
+                this.cutsceneImage.setTexture('story_cutscene_1');
+                break;
+            case 2:
+                this.cutsceneImage.setTexture('story_cutscene_2');
+                break;
+            case 3:
+                this.cutsceneImage.setTexture('story_cutscene_3');
+                break;
+            case 4:
+                this.cutsceneImage.setTexture('story_cutscene_4');
+                break;
+            case 5:
+                this.cutsceneImage.setTexture('story_cutscene_5_lose');
+                break;
+            case 6:
+                this.cutsceneImage.setTexture('story_cutscene_5_win');
+                break;
+        }
+    }
+
+    BringContinueButton()
+    {
+        if(this.continueButton != null)
+        {
+            this.continueButton.destroy();
+        }
+
+        let { width, height } = this.sys.game.canvas;
+
+        this.continueButton = this.add.image(width/2, height*3/4, 'story_button_continue')
+        this.continueButton.setTint(0x000000);
+
+        this.continueButton.setInteractive();
+        this.continueButton.on('pointerdown', () =>
+        {
+            //this.continueButton.destroy();
+            this.ProgressDialogue();
+        });
+
+        this.continueButton.on('pointerover', () => {
+            this.continueButton.setTint(0x2C2C2C);
+
+        });
+        this.continueButton.on('pointerout', () => 
+        {
+            this.continueButton.setTint(0x000000);
+        });
+    }
+
+    IsAnythingAGame()
+    {
+        const timeline = this.add.timeline([
+            {   //possess opponent
+                at: 1500,
+                
+                tween: {
+                    targets: this.continueButton,
+                    y: '+= 500',
+                    duration: 2000,
+                    yoyo:false,
+                    repeat: 0,
+                }
+            },
+            {   //possess opponent
+                at: 14000,
+                
+                run: () => {
+                    var chair = this.add.image(100,-140, 'story_object_chair');
+                    this.physics.add.existing(chair)
+                    chair.body.setGravity(0,1000);
+                }
+            },
+            {   //possess opponent
+                at: 17000,
+                
+                run: () => {
+                    var computer = this.add.image(1000,-140, 'story_object_computer');
+                    this.physics.add.existing(computer)
+                    computer.body.setGravity(0,1000);
+                }
+            },
+            {   //possess opponent
+                at: 19000,
+                
+                run: () => {
+                    var door = this.add.image(150,-140, 'story_object_door');
+                    this.physics.add.existing(door)
+                    door.body.setGravity(0,1000);
+                }
+            }
+            
+        ]);
+
+        timeline.play();
+    }
+
 }
