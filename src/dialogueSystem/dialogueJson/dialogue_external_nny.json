@@ -31,9 +31,8 @@
         "audioFile": "n_external_nny_05",
         "text": "I think with what we've discussed today, we can come to a conclusion",
         "duration": 3200,
-        "event": "vote",
+        "sceneAction": "endOfScene",
         "nextLine": "",
-        "nextLineDelay" : 1500,
-        "voteKey": "external_nny"
+        "nextLineDelay" : 1500
     }
 }

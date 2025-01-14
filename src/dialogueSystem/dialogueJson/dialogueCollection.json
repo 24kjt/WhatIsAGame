@@ -85,7 +85,9 @@
         "no": "external_n"
     },
     "external_y": {
-        "file": "dialogue_external_y"
+        "file": "dialogue_external_y",
+        "yes": "external_yy",
+        "no": "external_yn"
     },
     "external_yy": {
         "file": "dialogue_external_yy",

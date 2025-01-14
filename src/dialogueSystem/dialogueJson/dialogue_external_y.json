@@ -25,7 +25,8 @@
         "text": "But, what about David?",
         "duration": 2000,        
         "nextLine": "5",
-        "nextLineDelay" : 2200
+        "nextLineDelay" : 2200,
+        "sceneAction": "davidEntry"
     },
     "5": {
         "audioFile": "n_external_y_05",
@@ -53,7 +54,7 @@
         "text": "Not as enthusiastic as John, but does that make a difference?",
         "duration": 4000,        
         "nextLine": "9",
-        "nextLineDelay" : 2200
+        "nextLineDelay" : 4200
     },
     "9": {
         "audioFile": "n_external_y_09",

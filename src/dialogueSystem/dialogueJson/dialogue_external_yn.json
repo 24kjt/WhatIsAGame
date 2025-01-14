@@ -11,7 +11,8 @@
         "text": "Let's bring John back",
         "duration": 1000,        
         "nextLine": "3",
-        "nextLineDelay" : 1200
+        "nextLineDelay" : 1200,
+        "sceneAction": "johnReturn"
     },
     "3": {
         "audioFile": "n_external_yn_03",

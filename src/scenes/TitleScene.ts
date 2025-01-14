@@ -292,11 +292,12 @@ export class TitleScene extends Phaser.Scene {
         let xPos = Phaser.Math.Between(-visibleBounds.right/2, visibleBounds.right/2 )
         let yPos = Phaser.Math.Between(visibleBounds.bottom/2, visibleBounds.top/2 )
 
+        /*
         if(this.stage == IntroStage.Intro)
         {
             xPos = Phaser.Math.Between(0, width );
             yPos = Phaser.Math.Between(0, height );
-        }
+        }*/
 
         this.snakePellet = this.add.circle(xPos, yPos, 10, 0x41424C);
         this.snakePellet.setOrigin(0.5, 0.5);

@@ -36,6 +36,7 @@ import externalNarration_n from '../dialogueSystem/dialogueJson/dialogue_externa
 import externalNarration_ny from '../dialogueSystem/dialogueJson/dialogue_external_ny'
 import externalNarration_nn from '../dialogueSystem/dialogueJson/dialogue_external_nn'
 import externalNarration_nny from '../dialogueSystem/dialogueJson/dialogue_external_nnn'
+import externalNarration_nnn from '../dialogueSystem/dialogueJson/dialogue_external_nnn'
 
 
 export class NarrationManager extends Phaser.Scene {
@@ -213,31 +214,37 @@ export class NarrationManager extends Phaser.Scene {
                 break
             }
             case "versus_y":{
+                this.SetRecordingVariable("needsLosing", false)
                 console.log('versus y');
                returnValue = versusNarration_y;
                 break
             }
             case "versus_yy":{
+                this.SetRecordingVariable("needsWinning", false)
                 console.log('versus yy');
                returnValue = versusNarration_yy;
                 break
             }
             case "versus_yn":{
+                this.SetRecordingVariable("needsWinning", true)
                 console.log('versus yn');
                returnValue = versusNarration_yn;
                 break
             }
             case "versus_n":{
+                this.SetRecordingVariable("needsLosing", true)
                 console.log('versus n');
                returnValue = versusNarration_n;
                 break
             }
             case "versus_ny":{
+                this.SetRecordingVariable("needsWinning",false)
                 console.log('versus ny');
                returnValue = versusNarration_ny;
                 break
             }
             case "versus_nn":{
+                this.SetRecordingVariable("needsWinning", true)
                 console.log('versus nn');
                returnValue = versusNarration_nn;
                 break
@@ -248,41 +255,49 @@ export class NarrationManager extends Phaser.Scene {
                 break
             }
             case "story_y":{
+                this.SetRecordingVariable("needsAnyInteraction", false)
                 console.log('story_y');
                returnValue = storyNarration_y;
                 break
             }
             case "story_n":{
+                this.SetRecordingVariable("needsAnyInteraction",true)
                 console.log('story_n');
                returnValue = storyNarration_n;
                 break
             }
             case "story_ny":{
+                this.SetRecordingVariable("anyInteractionIsInteraction",true)
                 console.log('story_ny');
                returnValue = storyNarration_ny;
                 break
             }
             case "story_nyy":{
+                this.SetRecordingVariable("interactionNeedsToBeInGame",false)
                 console.log('story_nyy');
                returnValue = storyNarration_nyy;
                 break
             }
             case "story_nyn":{
+                this.SetRecordingVariable("interactionNeedsToBeInGame",false)
                 console.log('story_nyn');
                returnValue = storyNarration_nyn;
                 break
             }
             case "story_nn":{
+                this.SetRecordingVariable("anyInteractionIsInteraction",false)
                 console.log('story_nn');
                returnValue = storyNarration_nn;
                 break
             }
             case "story_nny":{
+                this.SetRecordingVariable("needsChoice", true)
                 console.log('story_nny');
                returnValue = storyNarration_nny;
                 break
             }
             case "story_nnn":{
+                this.SetRecordingVariable("needsChoice", false)
                 console.log('story_nny');
                returnValue = storyNarration_nnn;
                 break
@@ -293,51 +308,62 @@ export class NarrationManager extends Phaser.Scene {
                 break
             }
             case "external_y":{
+                this.SetRecordingVariable("needsToBeNotPaid",false)
                 console.log('external_');
                returnValue = externalNarration_y;
                 break
             }
             case "external_yy":{
+                this.SetRecordingVariable("needsToBeEnjoyed",false)
                 console.log('external_');
                returnValue = externalNarration_yy;
                 break
             }
             case "external_yyy":{
+                this.SetRecordingVariable("needsToBeFictional",false)
                 console.log('external_');
                returnValue = externalNarration_yyy;
                 break
             }
             case "external_yyn":{
+                this.SetRecordingVariable("needsToBeFictional",true)
                 console.log('external_');
                returnValue = externalNarration_yyn;
                 break
             }
             case "external_yn":{
+                this.SetRecordingVariable("needsToBeEnjoyed", true)
                 console.log('external_');
                returnValue = externalNarration_yn;
                 break
             }
             case "external_n":{
+                this.SetRecordingVariable("needsToBeNotPaid", true)
                 console.log('external_n');
                returnValue = externalNarration_n;
                 break
             }
             case "external_ny":{
+                this.SetRecordingVariable("needsToBeVoluntary", false)
+                this.SetRecordingVariable("needsToBeEnjoyed", false)
                 console.log('external_ny');
                returnValue = externalNarration_ny;
                 break
             }
             case "external_nn":{
+                this.SetRecordingVariable("needsToBeEnjoyed",false)
                 console.log('external_nn');
                returnValue = externalNarration_nn;
                 break
             }
             case "external_nnn":{
+                this.SetRecordingVariable("needsToBeVoluntary",false)
                 console.log('external_nnn');
                returnValue = externalNarration_nnn;
                 break
             }
             case "external_nny":{
+                this.SetRecordingVariable("needsToBeVoluntary",true)
                 console.log('external_nny');
                returnValue = externalNarration_nny;
                 break
@@ -369,6 +395,12 @@ export class NarrationManager extends Phaser.Scene {
          } 
 
         return returnValue;
+    }
+
+    SetRecordingVariable(key, value)
+    {
+        var recorder = this.scene.get("RecorderScene");
+        recorder.SetValue(key, value)
     }
 
 }

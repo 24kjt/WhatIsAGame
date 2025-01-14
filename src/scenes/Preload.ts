@@ -80,7 +80,8 @@ export default class Preload extends Phaser.Scene {
 			}
 		}
 
-		this.scene.start("TicTacToeScene");
+		this.scene.launch("RecorderScene");
+		this.scene.start("TitleScene");
 	}
 
 	/* END-USER-CODE */

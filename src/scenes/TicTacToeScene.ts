@@ -34,9 +34,11 @@ export class TicTacToeScene extends Phaser.Scene {
       this.initializeBoard();
 
       this.ui_you = this.add.image(150, 60, 'ui_you');
-      this.ui_opponent = this.add.image(width- 150, 50, 'ui_john');
+      this.ui_opponent = this.add.image(width+ 150, 50, 'ui_john');
 
       this.ui_yourTurn  = this.add.image(300, 100, 'ui_yourTurn');
+      this.ui_theirTurn  = this.add.image(width- 300, 100, 'ui_yourTurn');
+      this.ui_theirTurn.setAlpha(0)
 
       this.playerScore = 0;
       this.opponentScore = 0;
@@ -51,6 +53,13 @@ export class TicTacToeScene extends Phaser.Scene {
       });
 
       this.opponentScoreText.setAlign = 'right'
+
+
+      this.scene.launch('NarrationManager'); // true means start immediately
+      var narration = this.scene.get('NarrationManager');
+      narration.scene.dialogueKey = "external";
+      narration.scene.originalScene = this;
+      narration.startDialogue();
     }
 
     initializeBoard()
@@ -284,10 +293,16 @@ export class TicTacToeScene extends Phaser.Scene {
           {
             this.aiTurn()
             this.playerTurn = false;
+            this.ui_yourTurn.setAlpha(0)
+            this.ui_theirTurn.setAlpha(1)
+
           }
           else
           {
             this.playerTurn = true;
+            this.ui_yourTurn.setAlpha(1)
+            this.ui_theirTurn.setAlpha(0)
+
           }
       }
       else{
@@ -375,6 +390,172 @@ export class TicTacToeScene extends Phaser.Scene {
 
     }
 
+    PlaySceneAction(actionKey)
+    {
+        switch(actionKey)
+        {
+          case "johnEntry":
+            this.JohnEntry();
+            break;
+          case "davidEntry":
+            this.DavidEntry();
+            break;
+          case "johnReturn":
+            this.JohnReturn();
+            break;
+          case "michaelEntry":
+            this.MichaelEntry();
+            break;
+          case "endOfScene":
+            this.EndOfScene()
+            break;
+        }
+    }
+
+    JohnEntry()
+    {
+      let { width, height } = this.sys.game.canvas;
+
+      const timeline = this.add.timeline([
+        {
+          at: 0,
+
+          tween: {
+            targets: this.ui_opponent,
+            x: width- 150,
+            tween: 'Cubic.InOut',
+            duration: 1000,
+            ease: 'Linear',
+          }
 
 
+        },
+
+      ]);
+
+      timeline.play();
+    }
+
+    DavidEntry()
+    {
+      let { width, height } = this.sys.game.canvas;
+
+      const timeline = this.add.timeline([
+        {
+          at: 0,
+
+          tween: {
+            targets: this.ui_opponent,
+            x: width+ 150,
+            tween: 'Cubic.InOut',
+            duration: 1000,
+            ease: 'Linear',
+            yoyo: true,
+            repeat: 0
+          }
+
+
+        },
+        {
+          at: 1000,
+
+          run: () => {
+            this.ui_opponent.setTexture('ui_david');
+          }
+
+
+        },
+
+      ]);
+
+      timeline.play();
+    }
+
+    MichaelEntry()
+    {
+      let { width, height } = this.sys.game.canvas;
+
+      const timeline = this.add.timeline([
+        {
+          at: 0,
+
+          tween: {
+            targets: this.ui_opponent,
+            x: width+ 150,
+            tween: 'Cubic.InOut',
+            duration: 1000,
+            ease: 'Linear',
+            yoyo: true,
+            repeat: 0
+          }
+
+
+        },
+        {
+          at: 1000,
+
+          run: () => {
+            this.ui_opponent.setTexture('ui_michael');
+          }
+
+
+        },
+
+      ]);
+
+      timeline.play();
+    }
+
+    JohnReturn()
+    {
+      let { width, height } = this.sys.game.canvas;
+
+      const timeline = this.add.timeline([
+        {
+          at: 0,
+
+          tween: {
+            targets: this.ui_opponent,
+            x: width+ 150,
+            tween: 'Cubic.InOut',
+            duration: 1000,
+            ease: 'Linear',
+            yoyo: true,
+            repeat: 0
+          }
+
+
+        },
+        {
+          at: 1000,
+
+          run: () => {
+            this.ui_opponent.setTexture('ui_john');
+          }
+
+
+        },
+
+      ]);
+
+      timeline.play();
+    }
+
+
+    EndOfScene()
+    {
+        const timeline = this.add.timeline([
+            {
+                at: 4000,
+
+                run: () => {
+                    this.scene.get('NarrationManager').scene.stop();
+                    this.scene.start('ResultsScene');
+                }
+            }
+        ]);
+
+        timeline.play();
+
+    }
 }

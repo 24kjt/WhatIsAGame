@@ -23,7 +23,8 @@
     "4": {
         "audioFile": "n_external_04",
         "text": "Here's your opponent for the game, John",
-        "duration": 2400,        
+        "duration": 2400,  
+        "sceneAction": "johnEntry",      
         "nextLine": "5",
         "nextLineDelay" : 2600
     },

@@ -18,7 +18,8 @@
         "text": "So, here's Michael",
         "duration": 1700,        
         "nextLine": "4",
-        "nextLineDelay" : 1900
+        "nextLineDelay" : 1900,
+        "sceneAction": "michaelEntry"
     },
     "4": {
         "audioFile": "n_external_n_04",
