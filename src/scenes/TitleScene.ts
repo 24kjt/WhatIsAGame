@@ -308,6 +308,13 @@ export class TitleScene extends Phaser.Scene {
 
     EatSnakePellet()
     {  
+        
+        let sndClip = this.sound.add('title_eat')
+        sndClip.play({
+            volume: 0.2,
+            loop: false
+        });
+
         this.snakePellet.destroy();
         this.AddSnakeBody();
         this.AddSnakePellet();
@@ -683,10 +690,14 @@ export class TitleScene extends Phaser.Scene {
     ClickPlay()
     {   //screen transition
         //this.scene.start('BackgroundScene'); paper added transition
-        this.scene.start('VersusGameScene');
+        //this.scene.start('VersusGameScene');
+        this.scene.launch('TransitionScene')
+        this.scene.get('TransitionScene').nextScene = 'VersusGameScene'
 
         var narration = this.scene.get('NarrationManager');
         narration.scene.stop();
+
+        this.scene.stop();
     }
 
 

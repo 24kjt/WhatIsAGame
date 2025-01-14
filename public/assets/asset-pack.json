@@ -3,6 +3,27 @@
         "files": [
             {
                 "url": [
+                "assets/audio/lightSwitchOff.ogg"
+                ],                
+                "type": "audio",
+                "key": "lightOff"
+            },
+            {
+                "url": [
+                "assets/audio/lightSwitchOn.ogg"
+                ],                
+                "type": "audio",
+                "key": "lightOn"
+            },
+            {
+                "url": [
+                "assets/audio/pelletEating.ogg"
+                ],                
+                "type": "audio",
+                "key": "title_eat"
+            },
+            {
+                "url": [
                 "assets/audio/Narration/Title/n_title_01.ogg"
                 ],                
                 "type": "audio",

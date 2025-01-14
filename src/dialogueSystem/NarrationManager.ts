@@ -187,14 +187,14 @@ export class NarrationManager extends Phaser.Scene {
     playDialogue(dialogueJson, dialogueID: string){
         var data = dialogueJson[dialogueID];
         console.log(dialogueID)
-        if(!this.sound.locked)
-        {
+        //if(!this.sound.locked)
+        //{
             this.sndClip = this.sound.add(data.audioFile)
             this.sndClip.play({
-                volume: 1,
+                volume: 2,
                 loop: false
             });
-        }
+        //}
 
         this.subtitleSystem.displayText(data.text, data.duration);
     }

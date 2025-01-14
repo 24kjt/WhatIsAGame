@@ -549,8 +549,12 @@ export class TicTacToeScene extends Phaser.Scene {
                 at: 4000,
 
                 run: () => {
+                  this.scene.launch('TransitionScene')
+                  this.scene.get('TransitionScene').nextScene = 'ResultsScene'
+          
                     this.scene.get('NarrationManager').scene.stop();
-                    this.scene.start('ResultsScene');
+                    //this.scene.start('ResultsScene');
+                    this.scene.stop();
                 }
             }
         ]);

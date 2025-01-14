@@ -392,8 +392,12 @@ export class StoryScene extends Phaser.Scene {
                 at: 4000,
 
                 run: () => {
+                    this.scene.launch('TransitionScene')
+                    this.scene.get('TransitionScene').nextScene = 'TicTacToeScene'
+            
                     this.scene.get('NarrationManager').scene.stop();
-                    this.scene.start('TicTacToeScene');
+                    //this.scene.start('TicTacToeScene');
+                    this.scene.stop();
                 }
             }
         ]);
